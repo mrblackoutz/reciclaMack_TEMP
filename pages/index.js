@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Box, Typography, useMediaQuery } from "@mui/material";
-import {Image} from "../components/Image";
+import { Image } from "../components/Image";
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -16,14 +16,16 @@ export default function Home() {
         bgcolor={"primary.main"}
         color={"black"}
         width={"100%"}
-        height={{ md: 450, xs: 300 }}
+        height={{ md: 400, xs: "100%" }}
+        overflow={"hidden"}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
       >
         <Image
-          src="Ativos_Recicla_Mack/imagem-circuitos.png"
+          src="Ativos_Recicla_Mack/banner1.png"
           alt="Descrição da imagem"
+          width={"100%"}
         />
         <Typography
           variant="h4"
@@ -39,21 +41,28 @@ export default function Home() {
         bgcolor={"white"}
         color={"black"}
         width={"100%"}
-        height={420}
+        height={{ md: 420, xs: "100%" }}
         display={"flex"}
+        flexDirection={{ xs: "column", md: "row" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
         alignItems={"center"}
         justifyContent={"center"}
       >
         <Image
-          sx={{ width: "100%", marginLeft: 10 }}
+          sx={{
+            width: { md: "100%" },
+            alignItems: "center",
+            marginLeft: { xs: 0, md: 10 },
+            marginTop: { md: 0, xs: 5 },
+            marginBottom: { md: 0, xs: 5 },
+          }}
           src="Ativos_Recicla_Mack/imagem-circuitos.png"
           alt="Circuitos"
         />
-        <Box ml={10}>
-          <Typography variant={isMobile ? "body2" : "h4"}>
+        <Box ml={10} mr={10}>
+          <Typography variant={"h4"} marginBottom={2}>
             Quais são os objetivos do projeto?
           </Typography>
-          <Typography>
+          <Typography marginBottom={isMobile ? 2 : 0}>
             Lorem Ipsum é simplesmente uma simulação de texto da indústria
             tipográfica e de impressos, e vem sendo utilizado desde o século
             XVI, quando um impressor desconhecido pegou uma bandeja de tipos e
@@ -71,16 +80,21 @@ export default function Home() {
         bgcolor={"#00b59f"}
         color={"black"}
         width={"100%"}
-        height={420}
+        height={{ md: 420, xs: "100%" }}
         display={"flex"}
+        flexDirection={{ xs: "column", md: "row" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <Box ml={10}>
-          <Typography variant={isMobile ? "body2" : "h4"}>
-            Quais são os objetivos do projeto?
+        <Box ml={10} mr={10} textAlign={"right"} color={"white"}>
+          <Typography
+            variant={"h4"}
+            marginBottom={2}
+            marginTop={isMobile ? 2 : 0}
+          >
+            Porque reciclar e-lixo?
           </Typography>
-          <Typography>
+          <Typography marginBottom={isMobile ? 2 : 0}>
             Lorem Ipsum é simplesmente uma simulação de texto da indústria
             tipográfica e de impressos, e vem sendo utilizado desde o século
             XVI, quando um impressor desconhecido pegou uma bandeja de tipos e
@@ -94,8 +108,14 @@ export default function Home() {
           </Typography>
         </Box>
         <Image
-          sx={{ width: "100%", marginRight: 10 }}
-          src="Ativos_Recicla_Mack/imagem-circuitos.png"
+          sx={{
+            width: { md: "100%" },
+            alignItems: "center",
+            marginRight: { xs: 0, md: 10 },
+            marginTop: { md: 0, xs: 5 },
+            marginBottom: { md: 0, xs: 5 },
+          }}
+          src="Ativos_Recicla_Mack/image_53.png"
           alt="Circuitos"
         />
       </Box>
