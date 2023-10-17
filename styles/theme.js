@@ -24,6 +24,18 @@ const theme = createTheme({
   typography: {
     fontFamily: roboto.style.fontFamily,
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        "html, body": {
+          margin: 0,
+          padding: 0,
+          fontFamily:
+            "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+        },
+      },
+    },
+  },
 });
 
 export default theme;

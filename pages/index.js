@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <Box
-        bgcolor={"primary.main"}
+        bgcolor={"black"}
         color={"black"}
         width={"100%"}
         height={{ md: 400, xs: "100%" }}
@@ -26,6 +26,7 @@ export default function Home() {
           src="Ativos_Recicla_Mack/banner1.png"
           alt="Descrição da imagem"
           width={"100%"}
+          sx={{opacity:0.6}}
         />
         <Typography
           variant="h4"
@@ -34,7 +35,7 @@ export default function Home() {
             color: "#fff",
           }}
         >
-          Seu texto aqui
+          Revitalizando a Tecnologia, Reenergizando o Planeta!
         </Typography>
       </Box>
       <Box
@@ -77,7 +78,7 @@ export default function Home() {
         </Box>
       </Box>
       <Box
-        bgcolor={"#00b59f"}
+        bgcolor={"primary.main"}
         color={"black"}
         width={"100%"}
         height={{ md: 420, xs: "100%" }}
@@ -90,7 +91,7 @@ export default function Home() {
           <Typography
             variant={"h4"}
             marginBottom={2}
-            marginTop={isMobile ? 2 : 0}
+            marginTop={isMobile ? 5 : 0}
           >
             Porque reciclar e-lixo?
           </Typography>
@@ -119,20 +120,6 @@ export default function Home() {
           alt="Circuitos"
         />
       </Box>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
   );
 }

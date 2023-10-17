@@ -47,7 +47,7 @@ const NavBar = () => {
           </div>
           <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", fontSize: isMobile?9:16, marginRight: isMobile ? 0 : 100 }}>
             <StyledLink
-              href="/"
+              href="/quem-somos"
               style={{
                 color: "#f7f7f7",
                 marginRight: isMobile ? 4 : 16,
@@ -65,7 +65,7 @@ const NavBar = () => {
               Lixo Eletrônico
             </StyledLink>
             <StyledLink
-              href="/"
+              href="/pontos-de-coleta"
               style={{
                 color: "#f7f7f7",
                 marginRight: isMobile ? 4 : 16,
@@ -82,7 +82,7 @@ const NavBar = () => {
             >
               Projetos
             </StyledLink>
-            <StyledLink href="/" style={{ color: "#f7f7f7" }}>
+            <StyledLink href="/contato" style={{ color: "#f7f7f7" }}>
               Contato
             </StyledLink>
           </div>
