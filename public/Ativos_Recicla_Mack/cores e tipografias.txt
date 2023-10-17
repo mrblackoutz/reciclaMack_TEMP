@@ -1,0 +1,6 @@
+Fonte tipográfica - Montserrat
+Branco            - #F7F7F7
+Verde "azulado"   - ##00B59F
+Verde claro       - #10B14A
+Verde escuro      - #00844D
+Preto             - #202020

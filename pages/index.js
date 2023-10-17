@@ -1,125 +1,112 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import { Box, Typography, useMediaQuery } from "@mui/material";
+import {Image} from "../components/Image";
 
 export default function Home() {
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>ReciclaMack - Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Box
+        bgcolor={"primary.main"}
+        color={"black"}
+        width={"100%"}
+        height={{ md: 450, xs: 300 }}
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <Image
+          src="Ativos_Recicla_Mack/imagem-circuitos.png"
+          alt="Descrição da imagem"
+        />
+        <Typography
+          variant="h4"
+          sx={{
+            position: "absolute",
+            color: "#fff",
+          }}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
-        }
-      `}</style>
+          Seu texto aqui
+        </Typography>
+      </Box>
+      <Box
+        bgcolor={"white"}
+        color={"black"}
+        width={"100%"}
+        height={420}
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <Image
+          sx={{ width: "100%", marginLeft: 10 }}
+          src="Ativos_Recicla_Mack/imagem-circuitos.png"
+          alt="Circuitos"
+        />
+        <Box ml={10}>
+          <Typography variant={isMobile ? "body2" : "h4"}>
+            Quais são os objetivos do projeto?
+          </Typography>
+          <Typography>
+            Lorem Ipsum é simplesmente uma simulação de texto da indústria
+            tipográfica e de impressos, e vem sendo utilizado desde o século
+            XVI, quando um impressor desconhecido pegou uma bandeja de tipos e
+            os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum
+            sobreviveu não só a cinco séculos, como também ao salto para a
+            editoração eletrônica, permanecendo essencialmente inalterado. Se
+            popularizou na década de 60, quando a Letraset lançou decalques
+            contendo passagens de Lorem Ipsum, e mais recentemente quando passou
+            a ser integrado a softwares de editoração eletrônica como Aldus
+            PageMaker.
+          </Typography>
+        </Box>
+      </Box>
+      <Box
+        bgcolor={"#00b59f"}
+        color={"black"}
+        width={"100%"}
+        height={420}
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <Box ml={10}>
+          <Typography variant={isMobile ? "body2" : "h4"}>
+            Quais são os objetivos do projeto?
+          </Typography>
+          <Typography>
+            Lorem Ipsum é simplesmente uma simulação de texto da indústria
+            tipográfica e de impressos, e vem sendo utilizado desde o século
+            XVI, quando um impressor desconhecido pegou uma bandeja de tipos e
+            os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum
+            sobreviveu não só a cinco séculos, como também ao salto para a
+            editoração eletrônica, permanecendo essencialmente inalterado. Se
+            popularizou na década de 60, quando a Letraset lançou decalques
+            contendo passagens de Lorem Ipsum, e mais recentemente quando passou
+            a ser integrado a softwares de editoração eletrônica como Aldus
+            PageMaker.
+          </Typography>
+        </Box>
+        <Image
+          sx={{ width: "100%", marginRight: 10 }}
+          src="Ativos_Recicla_Mack/imagem-circuitos.png"
+          alt="Circuitos"
+        />
+      </Box>
 
       <style jsx global>{`
         html,
         body {
           padding: 0;
           margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
         * {
