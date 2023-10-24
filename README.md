@@ -39,7 +39,7 @@ Aqui nós vamos fazer uma cópia do repositório remoto para o nosso local de de
 3. Digite `git: clone` e pressione `Enter`.
 4. Insira o URL do seu repositório do projeto (Em "Code" no GitHub) e pressione `Enter`.
 5. Selecione a localização onde deseja guardar o clone do projeto localmente e pressione `Enter`.
-![Captura de tela com exemplo de como clonar um repositório](https://mackenzie365-my.sharepoint.com/personal/32361841_mackenzista_com_br/_layouts/15/embed.aspx?UniqueId=460fb838-6a4c-467b-83b6-b000d2af4ad6)
+![Captura de tela com exemplo de como clonar um repositório](https://i.imgur.com/mUYoQ2C.png)
 
 #### Clonagem usando o Terminal/Código:
 
