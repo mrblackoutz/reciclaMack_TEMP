@@ -21,16 +21,23 @@ export default () => {
             margin={2}
             fontWeight={"bold"}
             textAlign={"left"}
+            color={"#ffffff"}
           >
             Apoio Institucional
           </Typography>
         </Box>
-        <Box ml={10} mr={10}>
+        <Box ml={10} mr={10} sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "10rem"
+        }}>
+
           <Image
             sx={{
               width: { md: 80 },
               alignItems: "center",
             }}
+
             src="Ativos_Recicla_Mack/imagem-lixo.png"
             alt="Circuitos"
           />
@@ -88,7 +95,9 @@ export default () => {
             Objetivos e metas
           </Typography>
         </Box>
-        <Box ml={20} mr={20} display={"flex"} justifyContent={"space-between"}>
+        <Box ml={20} mr={20} display={"flex"} justifyContent={"space-between"}
+
+        >
           <Box
             display={"flex"}
             flexDirection={"column"}
@@ -167,16 +176,17 @@ export default () => {
             margin={2}
             fontWeight={"bold"}
             textAlign={"left"}
+            color={"#ffffff"}
           >
             Apoio Institucional
           </Typography>
         </Box>
-        <Box ml={10} mr={10} display={"flex"} flexDirection={"row"}>
+        <Box ml={10} mr={10} display={"flex"} flexDirection={"row"} gap={10} justifyContent={"center"}>
           <Box borderRadius={20}>
             <Box
-              borderRadius={2}
-              height={"40%"}
-              width={"20%"}
+              sx={{ borderRadius: '20px 20px 0 0' }}
+              height={"22vh"}
+              width={"20vw"}
               display={"flex"}
               justifyContent={"center"}
               alignContent={"center"}
@@ -191,7 +201,8 @@ export default () => {
                 alt="Circuitos"
               />
             </Box>
-            <Box height={"60%"} width={"20%"} bgcolor={"primary.main"}>
+            <Box height={"24vh"} width={"20vw"} bgcolor={"primary.main"} color={"#ffffff"} display={"flex"} justifyContent={"center"} flexDirection={"column"} padding={3} sx={{ borderRadius: '0 0 20px 20px' }} >
+
               <Typography variant={"body1"} fontWeight={"bold"}>
                 Nomes:{" "}
                 <Typography variant={"body1"} component={"span"}>
@@ -214,9 +225,9 @@ export default () => {
           </Box>
           <Box borderRadius={20}>
             <Box
-              borderRadius={2}
-              height={"40%"}
-              width={"20%"}
+              sx={{ borderRadius: '20px 20px 0 0' }}
+              height={"22vh"}
+              width={"20vw"}
               display={"flex"}
               justifyContent={"center"}
               alignContent={"center"}
@@ -231,7 +242,8 @@ export default () => {
                 alt="Circuitos"
               />
             </Box>
-            <Box height={"60%"} width={"20%"} bgcolor={"primary.main"}>
+            <Box height={"24vh"} width={"20vw"} bgcolor={"primary.main"} color={"#ffffff"} display={"flex"} justifyContent={"center"} flexDirection={"column"} padding={3} sx={{ borderRadius: '0 0 20px 20px' }}>
+
               <Typography variant={"body1"} fontWeight={"bold"}>
                 Nomes:{" "}
                 <Typography variant={"body1"} component={"span"}>
@@ -254,9 +266,9 @@ export default () => {
           </Box>
           <Box borderRadius={20}>
             <Box
-              borderRadius={2}
-              height={"40%"}
-              width={"20%"}
+              sx={{ borderRadius: '20px 20px 0 0' }}
+              height={"22vh"}
+              width={"20vw"}
               display={"flex"}
               justifyContent={"center"}
               alignContent={"center"}
@@ -271,7 +283,9 @@ export default () => {
                 alt="Circuitos"
               />
             </Box>
-            <Box height={"60%"} width={"20%"} bgcolor={"primary.main"}>
+            <Box height={"24vh"} width={"20vw"} bgcolor={"primary.main"} color={"#ffffff"} display={"flex"} justifyContent={"center"} flexDirection={"column"} padding={3}
+              sx={{ borderRadius: '0 0 20px 20px' }}
+            >
               <Typography variant={"body1"} fontWeight={"bold"}>
                 Nomes:{" "}
                 <Typography variant={"body1"} component={"span"}>
