@@ -196,16 +196,23 @@ export default () => {
             margin={2}
             fontWeight={"bold"}
             textAlign={"left"}
+            color={"#ffffff"}
           >
             Apoio Institucional
           </Typography>
         </Box>
-        <Box ml={10} mr={10}>
+        <Box ml={10} mr={10} sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "10rem"
+        }}>
+
           <Image
             sx={{
               width: { md: 80 },
               alignItems: "center",
             }}
+
             src="Ativos_Recicla_Mack/imagem-lixo.png"
             alt="Circuitos"
           />
@@ -352,6 +359,7 @@ export default () => {
             margin={2}
             fontWeight={"bold"}
             textAlign={"left"}
+            color={"#ffffff"}
           >
             Usuários
           </Typography>
