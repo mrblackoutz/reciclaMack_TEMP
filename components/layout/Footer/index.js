@@ -41,107 +41,116 @@ const NavBar = () => {
     <footer style={{ height: isMobile ? 400 : 300, width: "100%" }}>
       <Box bgcolor={"#202020"} width={"100%"} height={"100%"}>
         <Grid container height={"100%"} width={"100%"}>
-          <Grid
-            item
-            xs={6}
-            md={3}
-            display={"flex"}
-            direction={"column"}
-            alignItems={"center"}
-            justifyContent={"center"}
-          >
-            <StyledLink href={"/"}>
-              <Image
-                src="mackenzie.svg"
-                style={{ height: isMobile ? 45 : 80, margin: 10 }}
-                alt="Mackenzie Logo"
-              />
-            </StyledLink>
-            <ReciclaMackLabel fontSize={isMobile ? "18px" : "22px"} />
-            <StyledLink href={"/"}>
-              <Image
-                src="atletica.svg"
-                style={{ height: isMobile ? 45 : 80, margin: 10 }}
-                alt="Mackenzie Logo"
-              />
-            </StyledLink>
+          <Grid item xs={6} md={3}>
+            <Box
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              width={"100%"}
+              height={"100%"}
+            >
+              <StyledLink href={"/"}>
+                <Image
+                  src="mackenzie.svg"
+                  style={{ height: isMobile ? 45 : 80, margin: 10 }}
+                  alt="Mackenzie Logo"
+                />
+              </StyledLink>
+              <ReciclaMackLabel fontSize={isMobile ? "18px" : "22px"} />
+              <StyledLink href={"/"}>
+                <Image
+                  src="atletica.svg"
+                  style={{ height: isMobile ? 45 : 80, margin: 10 }}
+                  alt="Mackenzie Logo"
+                />
+              </StyledLink>
+            </Box>
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Box
+              display={"flex"}
+              width={"100%"}
+              height={"100%"}
+              flexDirection={"column"}
+              justifyContent={"space-evenly"}
+              alignItems={"center"}
+              fontSize={{ md: "16px", xs: "14px" }}
+            >
+              <Link
+                href="/quem-somos"
+                style={{ color: "#f7f7f7", fontSize: "16px" }}
+              >
+                Sobre nós
+              </Link>
+              <Link
+                href="/quem-somos"
+                style={{ color: "#f7f7f7", fontSize: "16px" }}
+              >
+                O que Reciclar
+              </Link>
+              <Link
+                href="/quem-somos"
+                style={{ color: "#f7f7f7", fontSize: "16px" }}
+              >
+                Como Reciclar
+              </Link>
+              <Link
+                href="/quem-somos"
+                style={{ color: "#f7f7f7", fontSize: "16px" }}
+              >
+                FAQ
+              </Link>
+              <Link
+                href="/quem-somos"
+                style={{ color: "#f7f7f7", fontSize: "16px" }}
+              >
+                Contato
+              </Link>
+            </Box>
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Box
+              width={"100%"}
+              height={"100%"}
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"space-evenly"}
+              alignItems={"center"}
+            >
+              <Link
+                href="/quem-somos"
+                style={{ color: "#f7f7f7", fontSize: "16px" }}
+              >
+                Direitos Autorais
+              </Link>
+              <Link
+                href="/quem-somos"
+                style={{ color: "#f7f7f7", fontSize: "16px" }}
+              >
+                Políticas de Privacidade
+              </Link>
+              <Link
+                href="/quem-somos"
+                style={{ color: "#f7f7f7", fontSize: "16px" }}
+              >
+                Cookies
+              </Link>
+              <Link
+                href="/quem-somos"
+                style={{ color: "#f7f7f7", fontSize: "16px" }}
+              >
+                Termos de Uso
+              </Link>
+            </Box>
           </Grid>
           <Grid
             item
             xs={6}
             md={3}
             display={"flex"}
-            direction={"column"}
-            justifyContent={"space-evenly"}
-            alignItems={"center"}
-            fontSize={{ md: "16px", xs: "14px" }}
-          >
-            <Link
-              href="/quem-somos"
-              style={{ color: "#f7f7f7", fontSize: "16px" }}
-            >
-              Sobre nós
-            </Link>
-            <Link
-              href="/quem-somos"
-              style={{ color: "#f7f7f7", fontSize: "16px" }}
-            >
-              O que Reciclar
-            </Link>
-            <Link
-              href="/quem-somos"
-              style={{ color: "#f7f7f7", fontSize: "16px" }}
-            >
-              Como Reciclar
-            </Link>
-            <Link
-              href="/quem-somos"
-              style={{ color: "#f7f7f7", fontSize: "16px" }}
-            >
-              FAQ
-            </Link>
-            <Link
-              href="/quem-somos"
-              style={{ color: "#f7f7f7", fontSize: "16px" }}
-            >
-              Contato
-            </Link>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            md={3}
-            display={"flex"}
-            direction={"column"}
-            justifyContent={"space-evenly"}
             alignItems={"center"}
           >
-            <Link
-              href="/quem-somos"
-              style={{ color: "#f7f7f7", fontSize: "16px" }}
-            >
-              Direitos Autorais
-            </Link>
-            <Link
-              href="/quem-somos"
-              style={{ color: "#f7f7f7", fontSize: "16px" }}
-            >
-              Políticas de Privacidade
-            </Link>
-            <Link
-              href="/quem-somos"
-              style={{ color: "#f7f7f7", fontSize: "16px" }}
-            >
-              Cookies
-            </Link>
-            <Link
-              href="/quem-somos"
-              style={{ color: "#f7f7f7", fontSize: "16px" }}
-            >
-              Termos de Uso
-            </Link>
-          </Grid>
-          <Grid item xs={6} md={3} display={"flex"} alignItems={"center"}>
             <Box width={"100%"} m={1}>
               <Box display={"flex"} alignItems={"center"} mt={1}>
                 <img

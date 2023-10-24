@@ -21,7 +21,7 @@ const NavBar = () => {
       <AppBar position="fixed" sx={{ backgroundColor: "#202020", height: 80 }}>
         <Toolbar
           style={{
-            "font-family": "Poppins-Regular, Helvetica",
+            "fontFamily?": "Poppins-Regular, Helvetica",
             height: "100%",
             display: "flex",
             alignItems: "center",
@@ -45,7 +45,15 @@ const NavBar = () => {
               />
             </StyledLink>
           </div>
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", fontSize: isMobile?9:16, marginRight: isMobile ? 0 : 100 }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              fontSize: isMobile ? 9 : 16,
+              marginRight: isMobile ? 0 : 100,
+            }}
+          >
             <StyledLink
               href="/quem-somos"
               style={{

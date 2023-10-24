@@ -1,3 +1,4 @@
+'use client'
 import Head from "next/head";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Image } from "../components/Image";
