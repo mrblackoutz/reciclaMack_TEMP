@@ -74,7 +74,7 @@ const NavBar = () => {
               Pontos de coleta
             </StyledLink>
             <StyledLink
-              href="/"
+              href="/pontos-de-coleta"
               style={{
                 color: "#f7f7f7",
                 marginRight: isMobile ? 4 : 16,
