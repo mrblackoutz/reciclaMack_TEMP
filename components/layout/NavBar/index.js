@@ -64,7 +64,7 @@ const NavBar = () => {
               Quem somos
             </StyledLink>
             <StyledLink
-              href="/"
+              href="/lixo-eletronico"
               style={{
                 color: "#f7f7f7",
                 marginRight: isMobile ? 4 : 16,
@@ -82,7 +82,7 @@ const NavBar = () => {
               Pontos de coleta
             </StyledLink>
             <StyledLink
-              href="/pontos-de-coleta"
+              href="/projetos"
               style={{
                 color: "#f7f7f7",
                 marginRight: isMobile ? 4 : 16,
