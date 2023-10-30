@@ -11,10 +11,10 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { IconButton } from "@mui/material";
-import { Menu } from "@mui/icons-material";
+import { Close, Menu } from "@mui/icons-material";
 
 export default function TemporaryDrawer(props) {
-  const { links, currentPath } = props; 
+  const { links, currentPath } = props;
   const [state, setState] = React.useState(false);
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -35,32 +35,30 @@ export default function TemporaryDrawer(props) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <Box display={"flex"} justifyContent={"flex-end"}>
+        <IconButton
+          sx={{
+            color: "inherit",
+          }}
+        >
+          <Close fontSize="large" />
+        </IconButton>
+      </Box>
+      <List sx={{ mt: 3 }}>
         {links.map((link, index) => (
           <ListItem key={link.path} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <ListItemIcon style={{ color: "inherit" }}>
+                {link.icone}
               </ListItemIcon>
               <ListItemText
                 primary={link.texto}
-                primaryTypographyProps={{ style: {
-                  fontWeight: currentPath === link.path ? "bold" : "normal",
-                }}}
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: currentPath === link.path ? "bold" : "normal",
+                  },
+                }}
               />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -84,6 +82,12 @@ export default function TemporaryDrawer(props) {
           anchor={"right"}
           open={state["right"]}
           onClose={toggleDrawer("right", false)}
+          PaperProps={{
+            sx: {
+              backgroundColor: "#202020",
+              color: "#f7f7f7",
+            },
+          }}
         >
           {list("right")}
         </Drawer>

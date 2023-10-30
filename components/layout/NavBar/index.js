@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import TemporaryDrawer from "./Drawer";
 import { Image } from "../../Image";
+import { Computer, ContactMail, Folder, Info, LocationOn } from "@mui/icons-material";
 
 const StyledLink = ({ href, children, style }) => {
   return (
@@ -22,11 +23,15 @@ const NavBar = () => {
   const router = useRouter();
   const [currentPath, setCurrentPath] = React.useState(router.pathname);
   const links = [
-    { path: "/quem-somos", texto: "Quem somos" },
-    { path: "/lixo-eletronico", texto: "Lixo Eletrônico" },
-    { path: "/pontos-de-coleta", texto: "Pontos de coleta" },
-    { path: "/projetos", texto: "Projetos" },
-    { path: "/contato", texto: "Contato" },
+    { path: "/quem-somos", texto: "Quem somos", icone: <Info /> },
+    { path: "/lixo-eletronico", texto: "Lixo Eletrônico", icone: <Computer /> },
+    {
+      path: "/pontos-de-coleta",
+      texto: "Pontos de coleta",
+      icone: <LocationOn />,
+    },
+    { path: "/projetos", texto: "Projetos", icone: <Folder /> },
+    { path: "/contato", texto: "Contato", icone: <ContactMail /> },
   ];
 
   React.useEffect(() => {
@@ -63,7 +68,7 @@ const NavBar = () => {
             <StyledLink href={"/"}>
               <Image
                 src="mackenzie.svg"
-                height={{lg: 80, md: 60, xs: 60}}
+                height={{ lg: 80, md: 60, xs: 60 }}
                 alt="Mackenzie Logo"
               />
             </StyledLink>
