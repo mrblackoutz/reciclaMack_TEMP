@@ -43,7 +43,7 @@ export default () => {
           </Box>
 
           <Image
-            src="Ativos_Recicla_Mack/image 51.png"
+            src="Ativos_Recicla_Mack/imagem-aparelhos-impilhados.png"
             style={{
               width: "30vw",
               height: "55vh",

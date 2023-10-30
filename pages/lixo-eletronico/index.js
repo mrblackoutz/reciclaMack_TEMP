@@ -126,9 +126,10 @@ export default function Home() {
             </Grid>
             <Divider
               orientation="vertical"
+              variant="middle"
               color="black"
               flexItem
-              sx={{ ml: 2, mr: 2, width: 2 }}
+              sx={{ ml: 5, mr: 6, width: 2 }}
             />
             <Grid
               item
@@ -141,6 +142,7 @@ export default function Home() {
                 src="Ativos_Recicla_Mack/banner2.png"
                 alt="Descrição da imagem"
                 width={"100%"}
+                height={{ md: "auto", xs: "100%" }}
                 borderRadius={3}
                 //sx={{ opacity: 0.6 }}
               />
@@ -164,9 +166,10 @@ export default function Home() {
             </Grid>
             <Divider
               orientation="vertical"
+              variant="middle"
               color="black"
               flexItem
-              sx={{ ml: 2, mr: 2, width: 2 }}
+              sx={{ ml: 2, mr: 8, width: 2 }}
             />
             <Grid item xs>
               <Typography variant={"h5"} marginBottom={2}>
