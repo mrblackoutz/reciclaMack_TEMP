@@ -35,6 +35,8 @@ export default function Home() {
             position: "absolute",
             color: "#fff",
           }}
+          fontSize={{ md: 40, xs: 25 }}
+          p={3}
         >
           Revitalizando a Tecnologia, Reenergizando o Planeta!
         </Typography>
