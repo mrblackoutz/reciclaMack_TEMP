@@ -43,7 +43,7 @@ export default function () {
           imagem="Ativos_Recicla_Mack/imagem-exposicao.png"
         />
       </Box>
-      <Box bgcolor={"#00B59F"} height={"100vh"} paddingX={"10rem"}>
+      <Box bgcolor={"#00B59F"} height={"80vh"} paddingX={"10rem"}>
         <h1 style={{ color: "#fff" }}>Vídeo/Animação</h1>
         <Outros
           id={5}
@@ -53,7 +53,7 @@ export default function () {
           buttonbg="#10B14A"
         />
       </Box>
-      <Box bgcolor={"#10B14A"} height={"100vh"} paddingX={"10rem"}>
+      <Box bgcolor={"#10B14A"} height={"80vh"} paddingX={"10rem"}>
         <h1 style={{ color: "#fff" }}>Jogo/Animação</h1>
         <Outros
           id={6}
@@ -63,7 +63,7 @@ export default function () {
           buttonbg="#00844D"
         />
       </Box>
-      <Box bgcolor={"#00844D"} height={"80vh"} paddingX={"10rem"}>
+      <Box bgcolor={"#00844D"} height={"70vh"} paddingX={"10rem"}>
         <Outros
           id={7}
           titulo="App coleta local"
