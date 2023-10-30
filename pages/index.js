@@ -27,7 +27,7 @@ export default function Home() {
           src="Ativos_Recicla_Mack/banner1.png"
           alt="Descrição da imagem"
           width={"100%"}
-          sx={{opacity:0.6}}
+          sx={{ opacity: 0.6 }}
         />
         <Typography
           variant="h4"
@@ -117,7 +117,7 @@ export default function Home() {
             marginTop: { md: 0, xs: 5 },
             marginBottom: { md: 0, xs: 5 },
           }}
-          src="Ativos_Recicla_Mack/image_53.png"
+          src="Ativos_Recicla_Mack/imagem-aparelhos-simbolo.png"
           alt="Circuitos"
         />
       </Box>
