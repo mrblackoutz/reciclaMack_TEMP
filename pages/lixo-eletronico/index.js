@@ -95,8 +95,8 @@ export default function Home() {
         height={{ md: 700, xs: "100%" }}
         display={"flex"}
         flexDirection={{ xs: "column", md: "row" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
-        alignItems={"center"}
-        justifyContent={"center"}
+        alignItems={"center"} // centraliza no eixo Y
+        justifyContent={"center"} // centraliza no eixo X
       >
         <Box ml={10} mr={10}>
           <Typography variant={"h4"} marginBottom={4}>

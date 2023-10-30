@@ -3,7 +3,11 @@ import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { useMediaQuery } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import TemporaryDrawer from "./Drawer";
+import { Image } from "../../Image";
 
 const StyledLink = ({ href, children, style }) => {
   return (
@@ -15,6 +19,27 @@ const StyledLink = ({ href, children, style }) => {
 
 const NavBar = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
+  const router = useRouter();
+  const [currentPath, setCurrentPath] = React.useState(router.pathname);
+  const links = [
+    { path: "/quem-somos", texto: "Quem somos" },
+    { path: "/lixo-eletronico", texto: "Lixo Eletrônico" },
+    { path: "/pontos-de-coleta", texto: "Pontos de coleta" },
+    { path: "/projetos", texto: "Projetos" },
+    { path: "/contato", texto: "Contato" },
+  ];
+
+  React.useEffect(() => {
+    const handleRouteChange = (url) => {
+      setCurrentPath(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
 
   return (
     <div style={{ height: 80, width: "100%" }}>
@@ -28,72 +53,49 @@ const NavBar = () => {
             justifyContent: "space-between",
           }}
         >
-          <div
-            style={{
-              height: 54,
-              width: 57,
-              marginLeft: isMobile ? 0 : 100,
-              display: "flex",
-              alignItems: "center",
-            }}
+          <Box
+            height={54}
+            width={57}
+            marginLeft={{ lg: 10, md: 0, xs: 0 }}
+            display={"flex"}
+            alignItems={"center"}
           >
             <StyledLink href={"/"}>
-              <img
+              <Image
                 src="mackenzie.svg"
-                style={{ height: isMobile ? 60 : 80 }}
+                height={{lg: 80, md: 60, xs: 60}}
                 alt="Mackenzie Logo"
               />
             </StyledLink>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              fontSize: isMobile ? 9 : 16,
-              marginRight: isMobile ? 0 : 100,
-            }}
-          >
-            <StyledLink
-              href="/quem-somos"
-              style={{
-                color: "#f7f7f7",
-                marginRight: isMobile ? 4 : 16,
-              }}
+          </Box>
+          {isMobile ? (
+            <TemporaryDrawer links={links} currentPath={currentPath} />
+          ) : (
+            <Box
+              display={"flex"}
+              flexDirection={"row"}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              fontSize={16}
+              marginRight={{ lg: 10, md: 2 }}
             >
-              Quem somos
-            </StyledLink>
-            <StyledLink
-              href="/lixo-eletronico"
-              style={{
-                color: "#f7f7f7",
-                marginRight: isMobile ? 4 : 16,
-              }}
-            >
-              Lixo Eletrônico
-            </StyledLink>
-            <StyledLink
-              href="/pontos-de-coleta"
-              style={{
-                color: "#f7f7f7",
-                marginRight: isMobile ? 4 : 16,
-              }}
-            >
-              Pontos de coleta
-            </StyledLink>
-            <StyledLink
-              href="/projetos"
-              style={{
-                color: "#f7f7f7",
-                marginRight: isMobile ? 4 : 16,
-              }}
-            >
-              Projetos
-            </StyledLink>
-            <StyledLink href="/contato" style={{ color: "#f7f7f7" }}>
-              Contato
-            </StyledLink>
-          </div>
+              {links.map((link, index) => (
+                <StyledLink
+                  key={link.path} // Adicione a propriedade "key" aqu
+                  href={link.path}
+                  style={{
+                    color: "#f7f7f7",
+                    marginRight: index !== links.length - 1 ? 16 : 0,
+                    fontWeight: currentPath === link.path ? "bold" : "normal",
+                    fontSize: currentPath === link.path ? 18 : 16,
+                    textAlign: "center",
+                  }}
+                >
+                  {link.texto}
+                </StyledLink>
+              ))}
+            </Box>
+          )}
         </Toolbar>
       </AppBar>
     </div>
