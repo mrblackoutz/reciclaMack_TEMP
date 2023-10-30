@@ -1,214 +1,80 @@
 "use client";
-import Head from "next/head";
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
-import { Image } from "../../components/Image";
+import { Box, useMediaQuery } from "@mui/material";
+import Evento from "./evento";
+import Outros from "./outrosItens";
 
-export default function Home() {
-  const isMobile = useMediaQuery("(max-width:600px)");
+export default function (){
+    const isMobile = useMediaQuery("(max-width:600px)");
 
-  return (
-    <div>
-      <Head>
-        <title>ReciclaMack - Home</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Box
-        bgcolor={"white"}
-        color={"black"}
-        width={"100%"}
-        height={{ md: 1300, xs: "100%" }}
-        display={"flex"}
-        flexDirection={{ xs: "column", md: "row" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
-        alignItems={"center"}
-        justifyContent={"center"}
-      >
-        <Grid container spacing={6} direction={"column"}>
-          <Grid item xs>
-            <Typography
-              variant={"h3"}
-              ml={12}
-              mb={-1}
-              fontWeight={"bold"}
+    return (
+        <Box
+            display={"flex"}
+            flexDirection={"column"}
+            alignItems={"flex-start"}
+            justifyContent={"center"}
+        >
+            <Box paddingX={"10rem"}>
+            <h1>Eventos</h1>
+                <Evento id= {1}
+                    titulo= "Evento 1"
+                    data= "03/10/2021"
+                    local= "R. da Consolação, 930"
+                    hora= "00:00"
+                    descricao= "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                    imagem= "Ativos_Recicla_Mack/imagem-tunel.png"
+                />
+                <Evento id= {2}
+                    titulo= "Evento 2"
+                    data= "03/10/2021"
+                    local= "R. da Consolação, 930"
+                    hora= "00:00"
+                    descricao= "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                    imagem= "Ativos_Recicla_Mack/imagem-gincana.png"
+                />
+                <Evento id= {3}
+                    titulo= "Evento 3"
+                    data= "03/10/2021"
+                    local= "R. da Consolação, 930"
+                    hora= "00:00"
+                    descricao= "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                    imagem= "Ativos_Recicla_Mack/imagem-exposicao.png"
+                />
+            </Box>
+            <Box bgcolor={"#00B59F"} 
+                height={"100vh"}
+                paddingX={"10rem"}
             >
-              Eventos
-            </Typography>
-          </Grid>
-          <Grid item xs display={"flex"} flexDirection={"row"}>
-            <Box ml={12} mr={12}>
-              <Typography variant={"h4"} marginBottom={4} fontWeight={"bold"}>
-                Túnel sensorial
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"}>
-                Data:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  dd/MM/YYYY
-                </Typography>
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"}>
-                Local:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  endereço do local, nº 439
-                </Typography>
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"}>
-                Hora:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  00:00
-                </Typography>
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"} mt={2}>
-                Descrição:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  Lorem Ipsum é simplesmente uma simulação de texto da indústria
-                  tipográfica e de impressos, e vem sendo
-                </Typography>
-              </Typography>
+                <h1 style={{color:"#fff"}}>Vídeo/Animação</h1>
+                <Outros id= {5}
+                    titulo= "video 1"
+                    descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                    imagem= "Ativos_Recicla_Mack/imagem-icone-video.png"
+                    buttonbg= "#10B14A"
+                />
             </Box>
-            <Image
-              sx={{
-                height: { md: "100%" },
-                alignItems: "center",
-                marginRight: { xs: 0, md: 10 },
-                marginTop: { md: 0, xs: 5 },
-                marginBottom: { md: 0, xs: 5 },
-              }}
-              src="Ativos_Recicla_Mack/imagem-tunel.png"
-              alt="tunel"
-            />
-          </Grid>
-          <Grid item xs display={"flex"} flexDirection={"row"}>
-            <Image
-              sx={{
-                height: { md: "100%" },
-                alignItems: "center",
-                marginRight: { xs: 0, md: 10 },
-                marginLeft: { xs: 0, md: 10 },
-                marginTop: { md: 0, xs: 5 },
-                marginBottom: { md: 0, xs: 5 },
-              }}
-              src="Ativos_Recicla_Mack/imagem-gincana.png"
-              alt="tunel"
-            />
-            <Box ml={12} mr={12}>
-              <Typography variant={"h4"} marginBottom={4} fontWeight={"bold"}>
-                Gincana
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"}>
-                Data:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  dd/MM/YYYY
-                </Typography>
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"}>
-                Local:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  endereço do local, nº 439
-                </Typography>
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"}>
-                Hora:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  00:00
-                </Typography>
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"} mt={2}>
-                Descrição:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  Lorem Ipsum é simplesmente uma simulação de texto da indústria
-                  tipográfica e de impressos, e vem sendo
-                </Typography>
-              </Typography>
+            <Box bgcolor={"#10B14A"} 
+                height={"100vh"}
+                paddingX={"10rem"}
+            >
+                <h1 style={{color:"#fff"}}>Jogo/Animação</h1>
+                <Outros id= {6}
+                    titulo= "Jogo 1"
+                    descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                    imagem= "Ativos_Recicla_Mack/imagem-icone-jogo.png"
+                    buttonbg= "#00844D"
+                />
             </Box>
-          </Grid>
-          <Grid item xs display={"flex"} flexDirection={"row"}>
-            <Box ml={12} mr={12}>
-              <Typography variant={"h4"} marginBottom={4} fontWeight={"bold"}>
-                Exposição do e-lixo
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"}>
-                Data:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  dd/MM/YYYY
-                </Typography>
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"}>
-                Local:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  endereço do local, nº 439
-                </Typography>
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"}>
-                Hora:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  00:00
-                </Typography>
-              </Typography>
-              <Typography variant={"body1"} fontWeight={"bold"} mt={2}>
-                Descrição:{" "}
-                <Typography variant={"body1"} component={"span"}>
-                  Lorem Ipsum é simplesmente uma simulação de texto da indústria
-                  tipográfica e de impressos, e vem sendo
-                </Typography>
-              </Typography>
+            <Box bgcolor={"#00844D"} 
+                height={"70vh"}
+                paddingX={"10rem"}
+            >
+                <Outros id= {7}
+                    titulo= "App coleta local"
+                    descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                    imagem= "Ativos_Recicla_Mack/imagem-icone-app.png"
+                    buttonbg= "#00B59F"
+                />
             </Box>
-            <Image
-              sx={{
-                height: { md: "100%" },
-                alignItems: "center",
-                marginRight: { xs: 0, md: 10 },
-                marginTop: { md: 0, xs: 5 },
-                marginBottom: { md: 0, xs: 5 },
-              }}
-              src="Ativos_Recicla_Mack/imagem-exposicao.png"
-              alt="tunel"
-            />
-          </Grid>
-        </Grid>
-      </Box>
-      <Box
-        bgcolor={"primary.main"}
-        color={"black"}
-        width={"100%"}
-        height={{ md: 420, xs: "100%" }}
-        display={"flex"}
-        flexDirection={{ xs: "column", md: "row" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
-        alignItems={"center"}
-        justifyContent={"center"}
-      >
-        <Box ml={10} mr={10} textAlign={"right"} color={"white"}>
-          <Typography
-            variant={"h4"}
-            marginBottom={2}
-            marginTop={isMobile ? 5 : 0}
-          >
-            Porque reciclar e-lixo?
-          </Typography>
-          <Typography marginBottom={isMobile ? 2 : 0}>
-            Lorem Ipsum é simplesmente uma simulação de texto da indústria
-            tipográfica e de impressos, e vem sendo utilizado desde o século
-            XVI, quando um impressor desconhecido pegou uma bandeja de tipos e
-            os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum
-            sobreviveu não só a cinco séculos, como também ao salto para a
-            editoração eletrônica, permanecendo essencialmente inalterado. Se
-            popularizou na década de 60, quando a Letraset lançou decalques
-            contendo passagens de Lorem Ipsum, e mais recentemente quando passou
-            a ser integrado a softwares de editoração eletrônica como Aldus
-            PageMaker.
-          </Typography>
         </Box>
-        <Image
-          sx={{
-            width: { md: "100%" },
-            alignItems: "center",
-            marginRight: { xs: 0, md: 10 },
-            marginTop: { md: 0, xs: 5 },
-            marginBottom: { md: 0, xs: 5 },
-          }}
-          src="Ativos_Recicla_Mack/image_53.png"
-          alt="Circuitos"
-        />
-      </Box>
-    </div>
-  );
+    )
 }
