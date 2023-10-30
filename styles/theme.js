@@ -24,6 +24,15 @@ const theme = createTheme({
   typography: {
     fontFamily: roboto.style.fontFamily,
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 700,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    }
+  },
   components: {
     MuiCssBaseline: {
       styleOverrides: {

@@ -13,7 +13,7 @@ export default function () {
       alignItems={"flex-start"}
       justifyContent={"center"}
     >
-      <Box paddingX={"10rem"}>
+      <Box paddingX={{ md: "10rem", xs: "1rem" }}>
         <h1>Eventos</h1>
         <Evento
           id={1}

@@ -1,8 +1,83 @@
-'use client'
-import { Box, Typography } from "@mui/material";
+"use client";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import { Image } from "../../components/Image";
+import { height } from "@mui/system";
+
+const PontosDeColeta = () => {
+  return (
+    <Grid
+      container
+      direction="row"
+      justify="space-between"
+      alignItems="center"
+      spacing={3}
+    >
+      <Grid item>
+        <Box
+          bgcolor={"#00844D"}
+          width={"5rem"}
+          height={"3rem"}
+          borderRadius={"10px"}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Typography>PDC-1</Typography>
+        </Box>
+      </Grid>
+      <Grid item>
+        <Box
+          bgcolor={"#00844D"}
+          width={"5rem"}
+          height={"3rem"}
+          borderRadius={"10px"}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Typography>PDC-2</Typography>
+        </Box>
+      </Grid>
+      <Grid item>
+        <Box
+          bgcolor={"#00844D"}
+          width={"5rem"}
+          height={"3rem"}
+          borderRadius={"10px"}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Typography>PDC-3</Typography>
+        </Box>
+      </Grid>
+      <Grid item>
+        <Box
+          bgcolor={"#00844D"}
+          width={"5rem"}
+          height={"3rem"}
+          borderRadius={"10px"}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Typography>PDC-4</Typography>
+        </Box>
+      </Grid>
+    </Grid>
+  );
+};
 
 export default () => {
+  const isMobile = useMediaQuery("(max-width:700px)");
   return (
     <div>
       <Box
@@ -12,7 +87,7 @@ export default () => {
         padding={"2rem"}
         bgcolor={"#00844D"}
         width={"100%"}
-        height={"90vh"}
+        height={{ md: "90vh", xs: "110vh" }}
         justifyContent={"space-between"}
       >
         <h1>Como separar os materiais de coleta?</h1>
@@ -79,52 +154,33 @@ export default () => {
         alignItems={"center"}
         padding={"2rem"}
         bgcolor={"#10B14A"}
-        height={"90vh"}
+        height={{ md: "90vh", xs: "140vh" }}
         width={"100%"}
       >
-        <Box display={"flex"} flexDirection={"column"} width={"50%"}>
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          width={{ md: "40vw", xs: "90vw" }}
+        >
           <h1>Onde posso realizar o descarte?</h1>
           <h2>Pontos de coleta</h2>
-          <Box
-            display={"flex"}
-            flexDirection={"row"}
-            justifyContent={"space-between"}
-          >
-            {/* talvez coloxar esses componentes como buttons para poder disparar evento com o 
-                        JavaScript e mudar a localização dos pontos de coleta */}
+          {isMobile ? (
             <Box
-              bgcolor={"#00844D"}
-              width={"5rem"}
-              borderRadius={"10px"}
-              textAlign={"center"}
+              // width={"50%"}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              pl={2}
+              pr={2}
             >
-              <p>PDC-1</p>
+              <Image
+                src="Ativos_Recicla_Mack/imagem-ponto-coleta.png"
+                //  style={{ width: "75%", height: "60%",}}
+                style={{ width: "70vw", height: "60vh" }}
+              />
             </Box>
-            <Box
-              bgcolor={"#00844D"}
-              width={"5rem"}
-              borderRadius={"10px"}
-              textAlign={"center"}
-            >
-              <p>PDC-2</p>
-            </Box>
-            <Box
-              bgcolor={"#00844D"}
-              width={"5rem"}
-              borderRadius={"10px"}
-              textAlign={"center"}
-            >
-              <p>PDC-3</p>
-            </Box>
-            <Box
-              bgcolor={"#00844D"}
-              width={"5rem"}
-              borderRadius={"10px"}
-              textAlign={"center"}
-            >
-              <p>PDC-4</p>
-            </Box>
-          </Box>
+          ) : null}
+          {isMobile ? null : <PontosDeColeta />}
           <Box>
             <h3>Locais - ponto de coleta n° 439</h3>
             <p>
@@ -136,19 +192,24 @@ export default () => {
               editoração eletrônica.
             </p>
           </Box>
+          {isMobile ? <PontosDeColeta /> : null}
         </Box>
-        <Box
-        // width={"50%"}
-        // display={"flex"}
-        // alignItems={"center"}
-        // justifyContent={"center"}
-        >
-          <Image
-            src="Ativos_Recicla_Mack/imagem-ponto-coleta.png"
-            //  style={{ width: "75%", height: "60%",}}
-            style={{ width: "40vw", height: "60vh" }}
-          />
-        </Box>
+        {isMobile ? null : (
+          <Box
+            // width={"50%"}
+            // display={"flex"}
+            // alignItems={"center"}
+            // justifyContent={"center"}
+            pl={2}
+            pr={2}
+          >
+            <Image
+              src="Ativos_Recicla_Mack/imagem-ponto-coleta.png"
+              //  style={{ width: "75%", height: "60%",}}
+              style={{ width: "40vw", height: "60vh" }}
+            />
+          </Box>
+        )}
       </Box>
     </div>
   );

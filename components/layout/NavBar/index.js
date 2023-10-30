@@ -19,7 +19,7 @@ const StyledLink = ({ href, children, style }) => {
 };
 
 const NavBar = () => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:700px)");
   const router = useRouter();
   const [currentPath, setCurrentPath] = React.useState(router.pathname);
   const links = [

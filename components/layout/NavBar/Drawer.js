@@ -12,6 +12,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { IconButton } from "@mui/material";
 import { Close, Menu } from "@mui/icons-material";
+import Link from "next/link";
 
 export default function TemporaryDrawer(props) {
   const { links, currentPath } = props;
@@ -47,19 +48,21 @@ export default function TemporaryDrawer(props) {
       <List sx={{ mt: 3 }}>
         {links.map((link, index) => (
           <ListItem key={link.path} disablePadding>
-            <ListItemButton>
-              <ListItemIcon style={{ color: "inherit" }}>
-                {link.icone}
-              </ListItemIcon>
-              <ListItemText
-                primary={link.texto}
-                primaryTypographyProps={{
-                  style: {
-                    fontWeight: currentPath === link.path ? "bold" : "normal",
-                  },
-                }}
-              />
-            </ListItemButton>
+            <Link href={link.path} style={{ textDecoration: "none", color: "inherit" }}>
+              <ListItemButton>
+                <ListItemIcon style={{ color: "inherit" }}>
+                  {link.icone}
+                </ListItemIcon>
+                <ListItemText
+                  primary={link.texto}
+                  primaryTypographyProps={{
+                    style: {
+                      fontWeight: currentPath === link.path ? "bold" : "normal",
+                    },
+                  }}
+                />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>

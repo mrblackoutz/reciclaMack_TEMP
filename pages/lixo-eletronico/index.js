@@ -40,8 +40,12 @@ export default function Home() {
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <Box ml={10} mr={10}>
-          <Typography variant={"h4"} marginBottom={4}>
+        <Box ml={10} mr={10} pt={{ md: 0, xs: 5 }} pb={{ md: 0, xs: 5 }}>
+          <Typography
+            variant={"h4"}
+            marginBottom={4}
+            sx={{ fontWeight: "bold" }}
+          >
             O que devemos reciclar?
           </Typography>
           <Grid container>
@@ -64,6 +68,7 @@ export default function Home() {
             </Grid>
             <Divider
               orientation="vertical"
+              variant="middle"
               color="white"
               flexItem
               sx={{ ml: 2, mr: 2, width: 3 }}
@@ -93,6 +98,8 @@ export default function Home() {
         color={"black"}
         width={"100%"}
         height={{ md: 700, xs: "100%" }}
+        pt={{ md: 0, xs: 5 }}
+        pb={{ md: 0, xs: 5 }}
         display={"flex"}
         flexDirection={{ xs: "column", md: "row" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
         alignItems={"center"} // centraliza no eixo Y
@@ -142,7 +149,6 @@ export default function Home() {
                 src="Ativos_Recicla_Mack/banner2.png"
                 alt="Descrição da imagem"
                 width={"100%"}
-                height={{ md: "auto", xs: "100%" }}
                 borderRadius={3}
                 //sx={{ opacity: 0.6 }}
               />
