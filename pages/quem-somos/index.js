@@ -55,7 +55,7 @@ const Estudantes = () => {
       </Box>
     </Box>
   );
-}
+};
 
 const Objetivo = () => {
   return (
@@ -73,16 +73,14 @@ const Objetivo = () => {
         src="Ativos_Recicla_Mack/imagem-lixo.png"
         alt="Circuitos"
       />
-      <Typography variant={"h5"}>
-        Objetivo
-      </Typography>
+      <Typography variant={"h5"}>Objetivo</Typography>
       <Typography variant={"body1"} textAlign={"center"} mt={4}>
         Lorem Ipsum é simplesmente uma simulação de texto da indústria
         tipográfica.
       </Typography>
     </Box>
   );
-}
+};
 
 const Testemunhos = () => {
   return (
@@ -128,7 +126,7 @@ const Testemunhos = () => {
       </Box>
     </Box>
   );
-}
+};
 
 const Usuarios = () => {
   return (
@@ -196,23 +194,16 @@ export default () => {
             margin={2}
             fontWeight={"bold"}
             textAlign={"left"}
-            color={"#ffffff"}
           >
             Apoio Institucional
           </Typography>
         </Box>
-        <Box ml={10} mr={10} sx={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "10rem"
-        }}>
-
+        <Box ml={10} mr={10}>
           <Image
             sx={{
               width: { md: 80 },
               alignItems: "center",
             }}
-
             src="Ativos_Recicla_Mack/imagem-lixo.png"
             alt="Circuitos"
           />
@@ -359,7 +350,6 @@ export default () => {
             margin={2}
             fontWeight={"bold"}
             textAlign={"left"}
-            color={"#ffffff"}
           >
             Usuários
           </Typography>
