@@ -22,6 +22,7 @@ const StyledButton = styled("button")({
 });
 
 export default function FeedbackCarousel({ children, arrowColor, ...props }) {
+  children = children || [];
   return (
     <Carousel
       {...props}
@@ -88,11 +89,16 @@ export default function FeedbackCarousel({ children, arrowColor, ...props }) {
         )
       }
     >
-      {children.map((child, index) => (
-        <div key={index} style={{ display: "flex", justifyContent: "center" }}>
-          {child}
-        </div>
-      ))}
+      {children &&
+        Array.isArray(children) &&
+        children.map((child, index) => (
+          <div
+            key={index}
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            {child}
+          </div>
+        ))}
     </Carousel>
   );
 }
