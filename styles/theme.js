@@ -1,14 +1,6 @@
-import { Roboto } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-// Create a theme instance.
 const theme = createTheme({
   palette: {
     primary: {
@@ -22,7 +14,21 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: [
+      "Poppins",
+      "Montserrat",
+      "Inter",
+      "-apple-system",
+      "sans-serif",
+    ].join(","),
+    // Defina as fontes específicas para cada variante tipográfica
+    h1: {
+      fontFamily: "Poppins",
+    },
+    h2: {
+      fontFamily: "Montserrat",
+    },
+    // Adicione outras variações tipográficas conforme necessário
   },
   breakpoints: {
     values: {
@@ -31,7 +37,7 @@ const theme = createTheme({
       md: 900,
       lg: 1200,
       xl: 1536,
-    }
+    },
   },
   components: {
     MuiCssBaseline: {
@@ -39,8 +45,13 @@ const theme = createTheme({
         "html, body": {
           margin: 0,
           padding: 0,
-          fontFamily:
-            "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+          fontFamily: [
+            "Poppins",
+            "Montserrat",
+            "Inter",
+            "-apple-system",
+            "sans-serif",
+          ].join(","),
         },
       },
     },

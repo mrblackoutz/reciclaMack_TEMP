@@ -1,6 +1,7 @@
 "use client";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import { Image } from "../../components/Image";
+import Carousel from "./Carousel";
 
 const Estudantes = () => {
   return (
@@ -55,7 +56,7 @@ const Estudantes = () => {
       </Box>
     </Box>
   );
-}
+};
 
 const Objetivo = () => {
   return (
@@ -68,21 +69,19 @@ const Objetivo = () => {
     >
       <Image
         sx={{
-          width: { md: "40%" },
+          width: { md: "80%", xs: "60%" },
         }}
         src="Ativos_Recicla_Mack/imagem-lixo.png"
         alt="Circuitos"
       />
-      <Typography variant={"h5"}>
-        Objetivo
-      </Typography>
+      <Typography variant={"h5"}>Objetivo</Typography>
       <Typography variant={"body1"} textAlign={"center"} mt={4}>
         Lorem Ipsum é simplesmente uma simulação de texto da indústria
         tipográfica.
       </Typography>
     </Box>
   );
-}
+};
 
 const Testemunhos = () => {
   return (
@@ -91,8 +90,6 @@ const Testemunhos = () => {
       width={"330px"}
       height={"130px"}
       borderRadius={2}
-      ml={2}
-      mr={2}
       display={"flex"}
       justifyContent={"center"}
       alignItems={"center"}
@@ -100,8 +97,8 @@ const Testemunhos = () => {
     >
       <Image
         sx={{
-          width: { md: 80 },
-          alignItems: "center",
+          maxWidth: "30%",
+          pl: 2,
         }}
         src="Ativos_Recicla_Mack/imagem-lixo.png"
         alt="Circuitos"
@@ -128,7 +125,7 @@ const Testemunhos = () => {
       </Box>
     </Box>
   );
-}
+};
 
 const Usuarios = () => {
   return (
@@ -146,8 +143,8 @@ const Usuarios = () => {
     >
       <Image
         sx={{
-          width: { md: 80 },
-          alignItems: "center",
+          maxWidth: "30%",
+          pl: 2,
         }}
         src="Ativos_Recicla_Mack/imagem-lixo.png"
         alt="Circuitos"
@@ -217,124 +214,154 @@ export default () => {
             src="Ativos_Recicla_Mack/imagem-lixo.png"
             alt="Circuitos"
           />
-          <Image
-            sx={{
-              width: { md: 80 },
-              alignItems: "center",
-            }}
-            src="Ativos_Recicla_Mack/imagem-lixo.png"
-            alt="Circuitos"
-          />
-          <Image
-            sx={{
-              width: { md: 80 },
-              alignItems: "center",
-            }}
-            src="Ativos_Recicla_Mack/imagem-lixo.png"
-            alt="Circuitos"
-          />
         </Box>
       </Box>
 
-      <Box
+      <Grid
+        container
+        direction={"column"}
+        justify={"center"}
         bgcolor={"white"}
         color={"black"}
         width={"100%"}
-        height={{ md: 420, xs: "100%" }}
-        display={"flex"}
-        flexDirection={{ xs: "column" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
-        justifyContent={"center"}
+        height={"100%"}
+        pt={7}
+        pb={8}
       >
-        <Box ml={10} mb={5}>
-          <Typography
-            variant={"h4"}
-            margin={2}
-            fontWeight={"bold"}
-            textAlign={"left"}
-          >
+        <Grid item ml={12} mb={5}>
+          <Typography variant={"h4"} fontWeight={"bold"} align={"left"}>
             Objetivos e metas
           </Typography>
-        </Box>
-        <Box ml={20} mr={20} display={"flex"} justifyContent={"space-between"}>
-          <Objetivo />
-          <Objetivo />
-          <Objetivo />
-        </Box>
-      </Box>
-      <Box
-        bgcolor={"#10B14A"}
-        color={"black"}
-        width={"100%"}
-        height={{ md: 600, xs: "100%" }}
-        display={"flex"}
-        flexDirection={{ xs: "column" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
-        justifyContent={"center"}
-      >
-        <Box ml={10} mr={10} mt={7} mb={5}>
-          <Typography
-            variant={"h4"}
-            margin={2}
-            fontWeight={"bold"}
-            textAlign={"left"}
-            color={"white"}
-          >
-            Estudantes parceiros
-          </Typography>
-        </Box>
-        <Box
-          ml={10}
-          mr={10}
+        </Grid>
+        <Grid
+          container
+          item
           display={"flex"}
-          flexDirection={"row"}
           justifyContent={"center"}
-          flexGrow={1}
+          alignItems={"center"}
+          spacing={4}
+          xs={12}
+          height={"100%"}
         >
-          <Estudantes />
-          <Estudantes />
-          <Estudantes />
-        </Box>
-      </Box>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Objetivo />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Objetivo />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Objetivo />
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        style={{ backgroundColor: "#10B14A" }}
+        pb={8}
+        justifyContent={"center"}
+        //spacing={5} // ajustar o espaçamento conforme necessário
+      >
+        <Grid item xs={12} container>
+          <Grid
+            item
+            xs={12}
+            md={12} // desktop
+          >
+            <Typography
+              variant={"h4"}
+              ml={10}
+              mr={10}
+              mt={7}
+              mb={5}
+              sx={{
+                fontWeight: "bold",
+                color: "white",
+              }}
+              textAlign={"left"}
+            >
+              Estudantes parceiros
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} container spacing={4} justifyContent={"center"}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Estudantes />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Estudantes />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Estudantes />
+          </Grid>
+        </Grid>
+      </Grid>
+
       <Box
         bgcolor={"#00844D"}
         color={"black"}
         width={"100%"}
-        height={{ md: 400, xs: "100%" }}
+        height={"100%"}
         display={"flex"}
         flexDirection={{ xs: "column" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
         justifyContent={"center"}
       >
-        <Box ml={10} mr={10} mt={7} mb={1}>
-          <Typography
-            variant={"h4"}
-            margin={2}
-            fontWeight={"bold"}
-            textAlign={"left"}
-            color={"white"}
-          >
-            Testemunhos
-          </Typography>
-        </Box>
+        <Typography
+          variant={"h4"}
+          margin={2}
+          ml={12}
+          mt={7}
+          mb={2}
+          fontWeight={"bold"}
+          textAlign={"left"}
+          color={"white"}
+        >
+          Testemunhos
+        </Typography>
         <Typography
           variant={"h5"}
           fontWeight={"bold"}
           textAlign={"left"}
           color={"white"}
           ml={12}
-          mr={12}
           mb={5}
         >
           Colaboradores
         </Typography>
         <Box
-          ml={10}
-          mr={10}
           display={"flex"}
           flexDirection={"row"}
-          flexGrow={1}
+          width={"100%"}
+          justifyContent={"center"}
+          pb={8}
         >
-          <Testemunhos />
-          <Testemunhos />
-          <Testemunhos />
+          <Carousel arrowColor={"black"} width={"600px"}>
+            <Testemunhos />
+            <Testemunhos />
+            <Testemunhos />
+            <Testemunhos />
+          </Carousel>
         </Box>
       </Box>
       <Box
@@ -361,11 +388,25 @@ export default () => {
           mr={10}
           display={"flex"}
           flexDirection={"row"}
-          flexGrow={1}
+          height={"100%"}
+          justifyContent={"center"}
+          pb={8}
+          sx={{ overflowX: "hidden" }} // Impede a barra de rolagem horizontal
         >
-          <Usuarios />
-          <Usuarios />
-          <Usuarios />
+          <Carousel
+            arrowColor={"black"}
+            width={"600px"}
+            style={{
+              ".control-dots": {
+                position: "absolute",
+                top: "50px",
+              },
+            }}
+          >
+            <Usuarios />
+            <Usuarios />
+            <Usuarios />
+          </Carousel>
         </Box>
       </Box>
     </div>

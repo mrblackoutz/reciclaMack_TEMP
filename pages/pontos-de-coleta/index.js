@@ -98,7 +98,12 @@ export default () => {
           alignItems={"center"}
           paddingBottom={"7rem"}
         >
-          <Box display={"flex"} flexDirection={"column"} paddingRight={"1rem"}>
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            paddingRight={"1rem"}
+            paddingLeft={"1rem"}
+          >
             <Box>
               <h2>1° Etapa</h2>
               <Typography fontSize={".8rem"} style={{ width: "25vw" }}>
@@ -154,7 +159,7 @@ export default () => {
         alignItems={"center"}
         padding={"2rem"}
         bgcolor={"#10B14A"}
-        height={{ md: "90vh", xs: "140vh" }}
+        height={{ md: "90vh", xs: "100%" }}
         width={"100%"}
       >
         <Box

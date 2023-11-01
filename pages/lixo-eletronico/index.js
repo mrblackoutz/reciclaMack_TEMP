@@ -97,9 +97,9 @@ export default function Home() {
         bgcolor={"white"}
         color={"black"}
         width={"100%"}
-        height={{ md: 700, xs: "100%" }}
-        pt={{ md: 0, xs: 5 }}
-        pb={{ md: 0, xs: 5 }}
+        height={"100%"}
+        pt={6}
+        pb={6}
         display={"flex"}
         flexDirection={{ xs: "column", md: "row" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
         alignItems={"center"} // centraliza no eixo Y

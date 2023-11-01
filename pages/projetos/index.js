@@ -12,8 +12,9 @@ export default function () {
       flexDirection={"column"}
       alignItems={"flex-start"}
       justifyContent={"center"}
+      height={"100%"}
     >
-      <Box paddingX={{ md: "10rem", xs: "1rem" }}>
+      <Box paddingX={{ md: "10rem", xs: "1rem" }} height={"100%"}>
         <h1>Eventos</h1>
         <Evento
           id={1}

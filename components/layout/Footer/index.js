@@ -38,7 +38,7 @@ const NavBar = () => {
   const iconSize = isMobile ? 30 : 45;
 
   return (
-    <footer style={{ height: isMobile ? 400 : 300, width: "100%" }}>
+    <footer style={{ height: "100%", width: "100%" }}>
       <Box bgcolor={"#202020"} width={"100%"} height={"100%"}>
         <Grid container height={"100%"} width={"100%"}>
           <Grid item xs={6} md={3}>
