@@ -1,9 +1,10 @@
 "use client";
-import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { Image } from "../../components/Image";
+import React from "react";
 import { height } from "@mui/system";
 
-const PontosDeColeta = () => {
+const PontosDeColeta = ({setpontoColetaAtual}) => {
   return (
     <Grid
       container
@@ -13,64 +14,104 @@ const PontosDeColeta = () => {
       spacing={3}
     >
       <Grid item>
-        <Box
-          bgcolor={"#00844D"}
-          width={"5rem"}
-          height={"3rem"}
-          borderRadius={"10px"}
+        <Button
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            backgroundColor: "#00844D",
+            width: "5rem",
+            height: "3rem",
+            borderRadius: "10px",
+            color: "white",
+            ":hover": {
+              backgroundColor: "#00844D",
+              opacity: 0.6,
+            },
+          }}
+          onClick={() => {
+            setpontoColetaAtual(
+              "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1828.7791633713982!2d-46.652534!3d-23.548383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5837c9fcac33%3A0xa7a2e79ac002d158!2sAudit%C3%B3rio%20Ruy%20Barbosa!5e0!3m2!1spt-BR!2sbr!4v1698864412792!5m2!1spt-BR!2sbr"
+            );
           }}
         >
           <Typography>PDC-1</Typography>
-        </Box>
+        </Button>
       </Grid>
       <Grid item>
-        <Box
-          bgcolor={"#00844D"}
-          width={"5rem"}
-          height={"3rem"}
-          borderRadius={"10px"}
+        <Button
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            backgroundColor: "#00844D",
+            width: "5rem",
+            height: "3rem",
+            borderRadius: "10px",
+            color: "white",
+            ":hover": {
+              backgroundColor: "#00844D",
+              opacity: 0.6,
+            },
+          }}
+          onClick={() => {
+            setpontoColetaAtual(
+              "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1828.7952529683507!2d-46.65260622978968!3d-23.547226321706653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5837ece0d6e5%3A0x1aadd54144228832!2sCentro%20Hist%C3%B3rico%20Mackenzie!5e0!3m2!1spt-BR!2sbr!4v1698864450198!5m2!1spt-BR!2sbr"
+            );
           }}
         >
           <Typography>PDC-2</Typography>
-        </Box>
+        </Button>
       </Grid>
       <Grid item>
-        <Box
-          bgcolor={"#00844D"}
-          width={"5rem"}
-          height={"3rem"}
-          borderRadius={"10px"}
+        <Button
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            backgroundColor: "#00844D",
+            width: "5rem",
+            height: "3rem",
+            borderRadius: "10px",
+            color: "white",
+            ":hover": {
+              backgroundColor: "#00844D",
+              opacity: 0.6,
+            },
+          }}
+          onClick={() => {
+            setpontoColetaAtual(
+              "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1828.7952529683507!2d-46.65260622978968!3d-23.547226321706653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce584992d1355b%3A0x2619a4227c175a85!2sUniversidade%20Presbiteriana%20Mackenzie!5e0!3m2!1spt-BR!2sbr!4v1698864518502!5m2!1spt-BR!2sbr"
+            );
           }}
         >
           <Typography>PDC-3</Typography>
-        </Box>
+        </Button>
       </Grid>
       <Grid item>
-        <Box
-          bgcolor={"#00844D"}
-          width={"5rem"}
-          height={"3rem"}
-          borderRadius={"10px"}
+        <Button
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            backgroundColor: "#00844D",
+            width: "5rem",
+            height: "3rem",
+            borderRadius: "10px",
+            color: "white",
+            ":hover": {
+              backgroundColor: "#00844D",
+              opacity: 0.6,
+            },
+          }}
+          onClick={() => {
+            setpontoColetaAtual(
+              "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d768.913453981587!2d-46.65218850563264!3d-23.547266032801762!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c07b1db653%3A0x2aebaf44d8653a8b!2sPr%C3%A9dio%2031%20-%20Ed.%20Paulo%20Breda%20Filho%20-%20FCI%20Mackenzie!5e0!3m2!1spt-BR!2sbr!4v1698864554804!5m2!1spt-BR!2sbr"
+            );
           }}
         >
           <Typography>PDC-4</Typography>
-        </Box>
+        </Button>
       </Grid>
     </Grid>
   );
@@ -78,6 +119,9 @@ const PontosDeColeta = () => {
 
 export default () => {
   const isMobile = useMediaQuery("(max-width:700px)");
+  const [pontoColetaAtual, setpontoColetaAtual] = React.useState(
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d914.3925302350499!2d-46.65248373357559!3d-23.547959064832384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce58364045cacb%3A0x596f44a4faaae3ab!2sPr%C3%A9dio%2049!5e0!3m2!1spt-BR!2sbr!4v1698864015826!5m2!1spt-BR!2sbr"
+  );
   return (
     <div>
       <Box
@@ -178,14 +222,18 @@ export default () => {
               pl={2}
               pr={2}
             >
-              <Image
-                src="Ativos_Recicla_Mack/imagem-ponto-coleta.png"
-                //  style={{ width: "75%", height: "60%",}}
-                style={{ width: "70vw", height: "60vh" }}
+              <iframe
+                src={pontoColetaAtual}
+                style={{ border: 0, width: "70vw", height: "60vh" }}
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
               />
             </Box>
           ) : null}
-          {isMobile ? null : <PontosDeColeta />}
+          {isMobile ? null : (
+            <PontosDeColeta setpontoColetaAtual={setpontoColetaAtual} />
+          )}
           <Box>
             <h3>Locais - ponto de coleta n° 439</h3>
             <p>
@@ -197,7 +245,9 @@ export default () => {
               editoração eletrônica.
             </p>
           </Box>
-          {isMobile ? <PontosDeColeta /> : null}
+          {isMobile ? (
+            <PontosDeColeta setpontoColetaAtual={setpontoColetaAtual} />
+          ) : null}
         </Box>
         {isMobile ? null : (
           <Box
@@ -208,10 +258,12 @@ export default () => {
             pl={2}
             pr={2}
           >
-            <Image
-              src="Ativos_Recicla_Mack/imagem-ponto-coleta.png"
-              //  style={{ width: "75%", height: "60%",}}
-              style={{ width: "40vw", height: "60vh" }}
+            <iframe
+              src={pontoColetaAtual}
+              style={{ border: 0, width: "40vw", height: "60vh" }}
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
             />
           </Box>
         )}
