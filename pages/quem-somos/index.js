@@ -87,8 +87,8 @@ const Testemunhos = () => {
   return (
     <Box
       bgcolor={"white"}
-      width={"330px"}
-      height={"130px"}
+      width={{ md: "330px", xs: "240px" }}
+      height={{ md: "130px", xs: "180px" }}
       borderRadius={2}
       display={"flex"}
       justifyContent={"center"}
@@ -131,8 +131,8 @@ const Usuarios = () => {
   return (
     <Box
       bgcolor={"primary.main"}
-      width={"330px"}
-      height={"130px"}
+      width={{ md: "330px", xs: "240px" }}
+      height={{md: "130px", xs: "180px"}}
       borderRadius={2}
       ml={2}
       mr={2}
@@ -197,10 +197,10 @@ export default () => {
             Apoio Institucional
           </Typography>
         </Box>
-        <Box ml={10} mr={10}>
+        <Box ml={10} mr={10} pb={2}>
           <Image
             sx={{
-              width: { md: 80 },
+              width: { md: 80, xs: 100 },
               alignItems: "center",
             }}
             src="Ativos_Recicla_Mack/imagem-lixo.png"
@@ -208,7 +208,7 @@ export default () => {
           />
           <Image
             sx={{
-              width: { md: 80 },
+              width: { md: 80, xs: 100 },
               alignItems: "center",
             }}
             src="Ativos_Recicla_Mack/imagem-lixo.png"
@@ -355,8 +355,9 @@ export default () => {
           width={"100%"}
           justifyContent={"center"}
           pb={8}
+          sx={{ overflowX: "hidden" }} // Impede a barra de rolagem horizontal
         >
-          <Carousel arrowColor={"black"} width={"600px"}>
+          <Carousel arrowColor={"black"} width={{ xs: "380px", md: "600px" }}>
             <Testemunhos />
             <Testemunhos />
             <Testemunhos />
@@ -393,16 +394,7 @@ export default () => {
           pb={8}
           sx={{ overflowX: "hidden" }} // Impede a barra de rolagem horizontal
         >
-          <Carousel
-            arrowColor={"black"}
-            width={"600px"}
-            style={{
-              ".control-dots": {
-                position: "absolute",
-                top: "50px",
-              },
-            }}
-          >
+          <Carousel arrowColor={"black"} width={{ xs: "380px", md: "600px" }}>
             <Usuarios />
             <Usuarios />
             <Usuarios />
