@@ -78,7 +78,8 @@ const PontosDeColeta = () => {
   );
 };
 
-const Card = () => {
+const Card = (props) => {
+  const {title, description, textButton} = props
   return (
     <Box
       width={"100%"}
@@ -86,15 +87,16 @@ const Card = () => {
       sx={{ background: "linear-gradient(44deg, #01D1B8 0%, #10B14A 100%)" }}
       borderRadius={10}
       p={5}
+      ml={5}
     >
       <Typography variant={"h4"} color={"#FFF"}>
-        Alguma pergunta?
+        {title}
       </Typography>
       <Typography variant={"body1"} color={"#FFF"}>
-        Fale com a gente!
+        {description}
       </Typography>
-      <CustomizedButtons variant={"contained"} color={"primary"} size={"large"}>
-        Perguntas
+      <CustomizedButtons variant={"contained"} color={"primary"} sx={{ fontWeight: 'bold'}} size={"large"}>
+        {textButton}
       </CustomizedButtons>
     </Box>
   );
@@ -124,7 +126,16 @@ export default () => {
             alignItems={"center"}
             paddingBottom={"7rem"}
           >
-            <Card />
+            <Card
+              title={"Alguma pergunta?"}
+              description={"Descrição da pergunta 1"}
+              textButton={"Perguntas"}
+            />
+            <Card
+              title={"Alguma sugestão?"}
+              description={"Descrição da sugestão 1"}
+              textButton={"Sugestões"}
+            />
           </Box>
         </Grid>
       </Grid>
@@ -176,9 +187,7 @@ export default () => {
           </Grid>
         </Grid>
       </Grid>
-      <Box bgcolor={'white'} height={{ md: 400, xs: "100%" }}>
-
-      </Box>
+      <Box bgcolor={"white"} height={{ md: 400, xs: "100%" }}></Box>
     </div>
   );
 };
