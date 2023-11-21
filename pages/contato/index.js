@@ -1,103 +1,68 @@
 "use client";
-import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Box, Stack, Grid, Typography, useMediaQuery } from "@mui/material";
 import { Image } from "../../components/Image";
 import { height } from "@mui/system";
 import CustomizedButtons from "./customButton";
 import { Email } from "@mui/icons-material";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import RoomIcon from "@mui/icons-material/Room";
+import EmailIcon from "@mui/icons-material/Email";
+import FAQ from "./faq";
 
-const PontosDeColeta = () => {
-  return (
-    <Grid
-      container
-      direction="row"
-      justify="space-between"
-      alignItems="center"
-      spacing={3}
-    >
-      <Grid item>
-        <Box
-          bgcolor={"#00844D"}
-          width={"5rem"}
-          height={"3rem"}
-          borderRadius={"10px"}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Typography>PDC-1</Typography>
-        </Box>
-      </Grid>
-      <Grid item>
-        <Box
-          bgcolor={"#00844D"}
-          width={"5rem"}
-          height={"3rem"}
-          borderRadius={"10px"}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Typography>PDC-2</Typography>
-        </Box>
-      </Grid>
-      <Grid item>
-        <Box
-          bgcolor={"#00844D"}
-          width={"5rem"}
-          height={"3rem"}
-          borderRadius={"10px"}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Typography>PDC-3</Typography>
-        </Box>
-      </Grid>
-      <Grid item>
-        <Box
-          bgcolor={"#00844D"}
-          width={"5rem"}
-          height={"3rem"}
-          borderRadius={"10px"}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Typography>PDC-4</Typography>
-        </Box>
-      </Grid>
-    </Grid>
-  );
-};
-
-const Card = (props) => {
-  const {title, description, textButton} = props
+const Card = ({ title, description, textButton }) => {
   return (
     <Box
-      width={"100%"}
-      height={300}
-      sx={{ background: "linear-gradient(44deg, #01D1B8 0%, #10B14A 100%)" }}
-      borderRadius={10}
-      p={5}
-      ml={5}
+      sx={{
+        width: "100%",
+        borderRadius: 10,
+        overflow: "hidden",
+        background: "linear-gradient(44deg, #01D1B8 0%, #10B14A 100%)",
+        display: "flex",
+        p: { md: 6, xs: 3 },
+      }}
     >
-      <Typography variant={"h4"} color={"#FFF"}>
-        {title}
-      </Typography>
-      <Typography variant={"body1"} color={"#FFF"}>
-        {description}
-      </Typography>
-      <CustomizedButtons variant={"contained"} color={"primary"} sx={{ fontWeight: 'bold'}} size={"large"}>
-        {textButton}
-      </CustomizedButtons>
+      <Grid container spacing={3}>
+        <Grid
+          item
+          xs={12}
+          md={8}
+          display="flex"
+          flexDirection="column"
+          justifyContent="space-between"
+        >
+          <Typography variant="h4" color="#FFF" mb={3}>
+            {title}
+          </Typography>
+          <Typography variant="body1" color="#FFF" mb={3}>
+            {description}
+          </Typography>
+          <CustomizedButtons
+            variant="contained"
+            color="primary"
+            sx={{ fontWeight: "bold", width: "auto" }}
+            size="large"
+          >
+            {textButton}
+          </CustomizedButtons>
+        </Grid>
+
+        <Grid item xs={12} md={4} display="flex" justifyContent="center">
+          <Box
+            component="img"
+            src="Ativos_Recicla_Mack/icone-imagem-aleatoria.png"
+            alt="Descrição da imagem"
+            sx={{
+              height: { md: "100%", xs: "auto" },
+              maxHeight: { md: "100%", xs: "200px" },
+              maxWidth: "100%",
+              borderRadius: 3,
+            }}
+          />
+        </Grid>
+      </Grid>
     </Box>
   );
 };
@@ -110,16 +75,21 @@ export default () => {
         container
         color={"white"}
         display={"flex"}
-        flexDirection={"column"}
         padding={"2rem"}
         bgcolor={"#202020"}
         width={"100%"}
-        height={{ md: "90vh", xs: "110vh" }}
+        height={{ md: "90vh", sm: "155vh" }}
         justifyContent={"space-between"}
       >
-        <h1>Sugestões / Perguntas</h1>
-        <Grid item>
-          <Box
+        <Grid item xs={12}>
+          <h1>Sugestões / Perguntas</h1>
+        </Grid>
+        <Grid item xs={12} container spacing={5}>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={6}
             display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-evenly"}
@@ -128,66 +98,112 @@ export default () => {
           >
             <Card
               title={"Alguma pergunta?"}
-              description={"Descrição da pergunta 1"}
+              description={
+                "Você tem alguma dúvida sobre o nosso site, os nossos serviços ou os nossos produtos? Nós estamos aqui para te ajudar. Clique no botão abaixo e envie a sua pergunta. Nós responderemos o mais rápido possível."
+              }
               textButton={"Perguntas"}
             />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={6}
+            display={"flex"}
+            flexDirection={"row"}
+            justifyContent={"space-evenly"}
+            alignItems={"center"}
+            paddingBottom={"7rem"}
+          >
             <Card
               title={"Alguma sugestão?"}
-              description={"Descrição da sugestão 1"}
+              description={
+                "Você tem alguma ideia de como podemos melhorar o nosso site, os nossos serviços ou os nossos produtos? Nós adoraríamos ouvir a sua opinião. Clique no botão abaixo e envie a sua sugestão. Nós agradecemos a sua colaboração."
+              }
               textButton={"Sugestões"}
             />
-          </Box>
+          </Grid>
         </Grid>
       </Grid>
 
       <Grid
         container
-        alignItems="center"
-        color={"white"}
-        style={{
-          backgroundColor: "#10B14A",
-          padding: "2rem",
-          height: "90vh",
+        sx={{
+          color: "white",
+          bgcolor: "#10B14A",
+          px: { xs: 2, sm: 4, md: 6 },
+          py: { xs: 6, md: 3 },
+          height: { xs: "auto", md: "80vh" },
           width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
         }}
-        direction="row"
-        justify="space-evenly"
       >
         <Grid
           item
           xs={12}
-          md={12}
-          container
-          direction="column"
-          alignItems="left"
+          sx={{
+            textAlign: { xs: "center", sm: "left" },
+            mb: { sm: 6, xs: 6, md: 2 },
+            ml: 2,
+          }}
         >
-          <Typography variant={"h4"} fontWeight={"bold"}>
+          <Typography variant="h4" fontWeight="bold">
             Divulgação de Redes Sociais
           </Typography>
         </Grid>
 
-        <Grid item xs={12} container direction="row" alignItems="center">
-          <Grid item>
-            <Email />
-          </Grid>
-          <Grid item>
-            <Email />
-          </Grid>
-          <Grid item>
-            <Email />
-          </Grid>
-          <Grid item>
-            <Email />
-          </Grid>
-          <Grid item>
-            <Email />
-          </Grid>
-          <Grid item>
-            <Email />
-          </Grid>
+        <Grid
+          item
+          container
+          spacing={{ md: 20, sm: 10, xs: 5 }}
+          justifyContent="center"
+        >
+          {[
+            { IconComponent: EmailIcon, text: "contato@email.com.br" },
+            { IconComponent: YouTubeIcon, text: "ReciclaMackFCI" },
+            { IconComponent: InstagramIcon, text: "@ReciclaMack_FCI" },
+            { IconComponent: RoomIcon, text: "Rua das Avenidas, nº 123" },
+            { IconComponent: LinkedInIcon, text: "recicla_mack_FCI" },
+            { IconComponent: LocalPhoneIcon, text: "(XX) XXXXX-XXXX" },
+          ].map(({ IconComponent, text }, index) => (
+            <Grid
+              key={index}
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              <Box
+                sx={{ display: "flex", alignItems: "center", minWidth: 250 }}
+              >
+                <IconComponent
+                  sx={{
+                    height: 45,
+                    width: "auto",
+                    p: 0.7,
+                    borderRadius: 1.5,
+                    bgcolor: "#ffffff",
+                    color: "#00995C",
+                  }}
+                />
+                <Typography
+                  variant="body2"
+                  sx={{
+                    ml: 1,
+                    textDecoration: "underline",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {text}
+                </Typography>
+              </Box>
+            </Grid>
+          ))}
         </Grid>
       </Grid>
-      <Box bgcolor={"white"} height={{ md: 400, xs: "100%" }}></Box>
+      <FAQ />
     </div>
   );
 };
