@@ -78,16 +78,9 @@ export default function Home() {
                 Como descartar os não recicláveis?
               </Typography>
               <Typography marginBottom={isMobile ? 2 : 0}>
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria
-                tipográfica e de impressos, e vem sendo utilizado desde o século
-                XVI, quando um impressor desconhecido pegou uma bandeja de tipos
-                e os embaralhou para fazer um livro de modelos de tipos. Lorem
-                Ipsum sobreviveu não só a cinco séculos, como também ao salto
-                para a editoração eletrônica, permanecendo essencialmente
-                inalterado. Se popularizou na década de 60, quando a Letraset
-                lançou decalques contendo passagens de Lorem Ipsum, e mais
-                recentemente quando passou a ser integrado a softwares de
-                editoração eletrônica como Aldus PageMaker.
+        Descartar corretamente materiais não recicláveis é vital para preservar o meio ambiente e garantir a segurança. Alguns exemplos são: geladeiras, freezers, frigobares, aparelhos de ar condicionado, bebedouros, TVs, monitores de tubo, cartuchos de impressora, toners, fitas magnéticas (VHS, K7, disquetes), pilhas, baterias inchadas, fibras óticas e lâmpadas. 
+Para descartar: eletrodomésticos e eletrônicos, entre em contato com serviços de coleta de resíduos eletrônicos; tubos de imagem, cartuchos e toners, consulte políticas locais de reciclagem; algumas lojas coletam fitas magnéticas e pilhas;  fibras óticas e lâmpadas podem ser aceitas em instalações específicas de reciclagem, sujeitas a diretrizes locais.
+                  
               </Typography>
             </Grid>
           </Grid>
