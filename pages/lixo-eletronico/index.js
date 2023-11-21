@@ -54,16 +54,16 @@ export default function Home() {
                 Quais materiais podem ser reciclados?
               </Typography>
               <Typography marginBottom={isMobile ? 2 : 0}>
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria
-                tipográfica e de impressos, e vem sendo utilizado desde o século
-                XVI, quando um impressor desconhecido pegou uma bandeja de tipos
-                e os embaralhou para fazer um livro de modelos de tipos. Lorem
-                Ipsum sobreviveu não só a cinco séculos, como também ao salto
-                para a editoração eletrônica, permanecendo essencialmente
-                inalterado. Se popularizou na década de 60, quando a Letraset
-                lançou decalques contendo passagens de Lorem Ipsum, e mais
-                recentemente quando passou a ser integrado a softwares de
-                editoração eletrônica como Aldus PageMaker.
+                Uma ampla variedade de equipamentos que um dia foram alimentados
+                por energia elétrica, pilhas ou baterias. Isso inclui não apenas
+                os dispositivos principais, mas também os fios, acessórios e
+                todas as suas partes associadas. Desde aparelhos eletrônicos até
+                ferramentas elétricas, do menor fio ao componente mais
+                específico, estamos prontos para receber tudo o que já
+                desempenhou seu papel na produção de energia ou entretenimento.
+                Faça parte do movimento sustentável, contribuindo para o
+                descarte responsável desses itens e promovendo um ambiente mais
+                limpo e saudável para todos.
               </Typography>
             </Grid>
             <Divider
@@ -78,16 +78,18 @@ export default function Home() {
                 Como descartar os não recicláveis?
               </Typography>
               <Typography marginBottom={isMobile ? 2 : 0}>
-                Lorem Ipsum é simplesmente uma simulação de texto da indústria
-                tipográfica e de impressos, e vem sendo utilizado desde o século
-                XVI, quando um impressor desconhecido pegou uma bandeja de tipos
-                e os embaralhou para fazer um livro de modelos de tipos. Lorem
-                Ipsum sobreviveu não só a cinco séculos, como também ao salto
-                para a editoração eletrônica, permanecendo essencialmente
-                inalterado. Se popularizou na década de 60, quando a Letraset
-                lançou decalques contendo passagens de Lorem Ipsum, e mais
-                recentemente quando passou a ser integrado a softwares de
-                editoração eletrônica como Aldus PageMaker.
+                Descartar corretamente materiais não recicláveis é vital para
+                preservar o meio ambiente e garantir a segurança. Alguns
+                exemplos são: geladeiras, freezers, frigobares, aparelhos de ar
+                condicionado, bebedouros, TVs, monitores de tubo, cartuchos de
+                impressora, toners, fitas magnéticas (VHS, K7, disquetes),
+                pilhas, baterias inchadas, fibras óticas e lâmpadas. Para
+                descartar: eletrodomésticos e eletrônicos, entre em contato com
+                serviços de coleta de resíduos eletrônicos; tubos de imagem,
+                cartuchos e toners, consulte políticas locais de reciclagem;
+                algumas lojas coletam fitas magnéticas e pilhas; fibras óticas e
+                lâmpadas podem ser aceitas em instalações específicas de
+                reciclagem, sujeitas a diretrizes locais.
               </Typography>
             </Grid>
           </Grid>
@@ -115,20 +117,28 @@ export default function Home() {
           <Grid container>
             <Grid item xs>
               <Typography variant={"h5"} marginBottom={2}>
-                1° Fase do processo
+                1° - Coleta e Triagem
               </Typography>
               <Typography marginBottom={isMobile ? 2 : 0} ml={isMobile ? 2 : 8}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                a efficitur est. Cras nec consectetur orci, at aliquet urna.
-                Aliquam malesuada
+                A primeira fase envolve a coleta de lixo eletrônico de
+                consumidores, empresas e outros geradores. Isso pode ser feito
+                por meio de pontos de coleta designados, eventos de reciclagem
+                ou serviços de coleta especializados. Após a coleta, os itens
+                são triados para separar aqueles que podem ser reciclados
+                daqueles que precisam de disposição especial. Isso geralmente é
+                feito manualmente ou por meio de processos automatizados.
               </Typography>
-              <Typography variant={"h5"} marginBottom={2}>
-                2° Fase do processo
+              <Typography variant={"h5"} marginBottom={2} mt={3}>
+                2° Desmontagem e Recuperação de Componentes Valiosos
               </Typography>
               <Typography marginBottom={isMobile ? 2 : 0} ml={isMobile ? 2 : 8}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                a efficitur est. Cras nec consectetur orci, at aliquet urna.
-                Aliquam malesuada
+                Os dispositivos eletrônicos são desmontados para separar
+                diferentes componentes. Isso pode envolver a remoção de placas
+                de circuito, fios, baterias e outros elementos. Nesta fase, são
+                recuperados materiais valiosos, como metais preciosos (ouro,
+                prata, cobre), plásticos, vidro e outros materiais
+                reutilizáveis. Isso é frequentemente feito por meio de processos
+                de trituração, moagem e separação.
               </Typography>
             </Grid>
             <Divider
@@ -179,20 +189,23 @@ export default function Home() {
             />
             <Grid item xs>
               <Typography variant={"h5"} marginBottom={2}>
-                3° Fase do processo
+                3° Tratamento de Substâncias Tóxicas
               </Typography>
               <Typography marginBottom={isMobile ? 2 : 0} ml={isMobile ? 2 : 8}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                a efficitur est. Cras nec consectetur orci, at aliquet urna.
-                Aliquam malesuada
+                Dispositivos eletrônicos muitas vezes contêm substâncias
+                perigosas, como mercúrio, chumbo e cádmio. Essas substâncias são
+                tratadas de maneira segura para evitar a contaminação ambiental.
+                Por exemplo, as baterias podem ser separadas e enviadas para
+                instalações especializadas de tratamento.
               </Typography>
-              <Typography variant={"h5"} marginBottom={2}>
-                4° Fase do processo
+              <Typography variant={"h5"} marginBottom={2} mt={3}>
+                4° Recondicionamento ou Reutilização
               </Typography>
               <Typography marginBottom={isMobile ? 2 : 0} ml={isMobile ? 2 : 8}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                a efficitur est. Cras nec consectetur orci, at aliquet urna.
-                Aliquam malesuada
+                Quando possível, alguns dispositivos eletrônicos podem ser
+                recondicionados e reutilizados. Isso é uma forma eficaz de
+                estender a vida útil dos produtos e reduzir a demanda por
+                novos materiais.
               </Typography>
             </Grid>
           </Grid>
