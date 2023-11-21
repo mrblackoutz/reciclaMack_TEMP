@@ -99,16 +99,16 @@ export default function Home() {
             Porque reciclar e-lixo?
           </Typography>
           <Typography marginBottom={isMobile ? 2 : 0}>
-            Lorem Ipsum é simplesmente uma simulação de texto da indústria
-            tipográfica e de impressos, e vem sendo utilizado desde o século
-            XVI, quando um impressor desconhecido pegou uma bandeja de tipos e
-            os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum
-            sobreviveu não só a cinco séculos, como também ao salto para a
-            editoração eletrônica, permanecendo essencialmente inalterado. Se
-            popularizou na década de 60, quando a Letraset lançou decalques
-            contendo passagens de Lorem Ipsum, e mais recentemente quando passou
-            a ser integrado a softwares de editoração eletrônica como Aldus
-            PageMaker.
+            A prática da economia circular e a reciclagem são fundamentais 
+              para prolongar a vida útil dos materiais eletrônicos. A reciclagem possibilita 
+                a reutilização de recursos valiosos, reduzindo a necessidade de extrair novas 
+                  matérias-primas e diminuindo a poluição associada à fabricação de novos dispositivos. 
+            Organizações dedicadas, como a COPERMITI, desempenham um papel fundamental nesse processo, 
+                    promovendo e facilitando a reciclagem responsável de equipamentos eletrônicos. O 
+                    descarte consciente e a reciclagem do lixo eletrônico não apenas preservam o ambiente, 
+                      mas também fomentam um consumo mais sustentável, contribuindo para uma sociedade mais 
+                      responsável e comprometida com a preservação do planeta. 
+            Cada indivíduo tem um papel crucial nessa jornada em direção a um futuro mais sustentável.
           </Typography>
         </Box>
         <Image
