@@ -24,7 +24,7 @@ export default function Home() {
         justifyContent={"center"}
       >
         <Image
-          src="Ativos_Recicla_Mack/banner2.png"
+          src="Ativos_Recicla_Mack/eletronicos-espalhados.jpg"
           alt="Descrição da imagem"
           width={"100%"}
           //sx={{ opacity: 0.6 }}
@@ -34,23 +34,20 @@ export default function Home() {
         bgcolor={"primary.main"}
         color={"white"}
         width={"100%"}
-        height={{ md: 420, xs: "100%" }}
+        height={"auto"}
         display={"flex"}
         flexDirection={{ xs: "column", md: "row" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
         alignItems={"center"}
         justifyContent={"center"}
+        px={{ xs: 5, md: 10 }} // Padding horizontal responsivo
       >
-        <Box ml={10} mr={10} pt={{ md: 0, xs: 5 }} pb={{ md: 0, xs: 5 }}>
-          <Typography
-            variant={"h4"}
-            marginBottom={4}
-            sx={{ fontWeight: "bold" }}
-          >
+        <Box py={8}>
+          <Typography variant={"h4"} pb={6} sx={{ fontWeight: "bold" }}>
             O que devemos reciclar?
           </Typography>
-          <Grid container>
-            <Grid item xs>
-              <Typography variant={"h5"} fontWeight={"bold"} marginBottom={2}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={5.5}>
+              <Typography variant={"h5"} fontWeight={"bold"} marginBottom={4}>
                 Quais materiais podem ser reciclados?
               </Typography>
               <Typography marginBottom={isMobile ? 2 : 0}>
@@ -66,15 +63,20 @@ export default function Home() {
                 limpo e saudável para todos.
               </Typography>
             </Grid>
-            <Divider
-              orientation="vertical"
-              variant="middle"
-              color="white"
-              flexItem
-              sx={{ ml: 2, mr: 2, width: 3 }}
-            />
-            <Grid item xs>
-              <Typography variant={"h5"} fontWeight={"bold"} marginBottom={2}>
+            {!isMobile && (
+              <Divider
+                orientation="vertical"
+                variant="middle"
+                color="white"
+                flexItem
+                sx={{
+                  mx: 4,
+                  width: 3,
+                }}
+              />
+            )}
+            <Grid item xs={12} md={5.5}>
+              <Typography variant={"h5"} fontWeight={"bold"} marginBottom={4}>
                 Como descartar os não recicláveis?
               </Typography>
               <Typography marginBottom={isMobile ? 2 : 0}>
@@ -95,117 +97,119 @@ export default function Home() {
           </Grid>
         </Box>
       </Box>
+
       <Box
-        bgcolor={"white"}
-        color={"black"}
-        width={"100%"}
-        height={"100%"}
+        bgcolor="white"
+        color="black"
+        width="100%"
+        height="100%"
         pt={6}
         pb={6}
-        display={"flex"}
-        flexDirection={{ xs: "column", md: "row" }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
-        alignItems={"center"} // centraliza no eixo Y
-        justifyContent={"center"} // centraliza no eixo X
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
       >
-        <Box ml={10} mr={10}>
-          <Typography variant={"h4"} marginBottom={4}>
+        <Box px={isMobile ? 2 : 10}>
+          <Typography variant="h4" mb={4}>
             Como devemos reciclar
           </Typography>
-          <Typography variant={"h5"} fontWeight={"bold"} marginBottom={4}>
+          <Typography variant="h5" fontWeight="bold" mb={4}>
             Como se dá o processo de reciclagem?
           </Typography>
           <Grid container>
-            <Grid item xs>
-              <Typography variant={"h5"} marginBottom={2}>
-                1° - Coleta e Triagem
+            <Grid
+              item
+              xs={12}
+              md={6}
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"center"}
+            >
+              <Typography variant="h6" fontWeight="bold" mb={2}>
+                1° Coleta e Triagem:
               </Typography>
-              <Typography marginBottom={isMobile ? 2 : 0} ml={isMobile ? 2 : 8}>
+              <Typography ml={8} mb={3}>
                 A primeira fase envolve a coleta de lixo eletrônico de
-                consumidores, empresas e outros geradores. Isso pode ser feito
-                por meio de pontos de coleta designados, eventos de reciclagem
-                ou serviços de coleta especializados. Após a coleta, os itens
-                são triados para separar aqueles que podem ser reciclados
-                daqueles que precisam de disposição especial. Isso geralmente é
-                feito manualmente ou por meio de processos automatizados.
+                consumidores, empresas e outros geradores. Após a coleta, os
+                itens são triados para separar os recicláveis daqueles que
+                precisam de disposição especial.
               </Typography>
-              <Typography variant={"h5"} marginBottom={2} mt={3}>
-                2° Desmontagem e Recuperação de Componentes Valiosos
+              <Typography variant="h6" fontWeight="bold" mb={2}>
+                2° Desmontagem e Recuperação de Componentes Valiosos:
               </Typography>
-              <Typography marginBottom={isMobile ? 2 : 0} ml={isMobile ? 2 : 8}>
+              <Typography ml={8} mb={3}>
                 Os dispositivos eletrônicos são desmontados para separar
                 diferentes componentes. Isso pode envolver a remoção de placas
                 de circuito, fios, baterias e outros elementos. Nesta fase, são
                 recuperados materiais valiosos, como metais preciosos (ouro,
                 prata, cobre), plásticos, vidro e outros materiais
                 reutilizáveis. Isso é frequentemente feito por meio de processos
-                de trituração, moagem e separação.
+                de trituração, moagem e separação.{" "}
               </Typography>
             </Grid>
-            <Divider
-              orientation="vertical"
-              variant="middle"
-              color="black"
-              flexItem
-              sx={{ ml: 5, mr: 6, width: 2 }}
-            />
             <Grid
               item
-              xs
+              xs={12}
+              md={6}
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
+              p={2}
             >
               <Image
-                src="Ativos_Recicla_Mack/banner2.png"
+                src="Ativos_Recicla_Mack/alunos-reciclando-bancada.jpg"
                 alt="Descrição da imagem"
-                width={"100%"}
                 borderRadius={3}
-                //sx={{ opacity: 0.6 }}
+                width="100%"
+                maxWidth={500}
               />
             </Grid>
-          </Grid>
-          <Grid container>
+            {/* 3 e 4 etapas */}
             <Grid
               item
-              xs
+              xs={12}
+              md={6}
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
+              order={{ xs: 2, md: 0 }} // Ajuste a propriedade "order" para mudar a posição no layout flex
+              p={4}
             >
               <Image
-                src="Ativos_Recicla_Mack/banner2.png"
+                src="Ativos_Recicla_Mack/alunos-reciclando-bancada-reunidos.jpg"
                 alt="Descrição da imagem"
-                width={"100%"}
                 borderRadius={3}
-                //sx={{ opacity: 0.6 }}
+                width="100%"
+                maxWidth={500}
               />
             </Grid>
-            <Divider
-              orientation="vertical"
-              variant="middle"
-              color="black"
-              flexItem
-              sx={{ ml: 2, mr: 8, width: 2 }}
-            />
-            <Grid item xs>
-              <Typography variant={"h5"} marginBottom={2}>
-                3° Tratamento de Substâncias Tóxicas
+            <Grid
+              item
+              xs={12}
+              md={6}
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"center"}
+            >
+              <Typography variant="h6" fontWeight="bold" mb={2}>
+                3° Tratamento de Substâncias Tóxicas:
               </Typography>
-              <Typography marginBottom={isMobile ? 2 : 0} ml={isMobile ? 2 : 8}>
+              <Typography ml={8} mb={3}>
                 Dispositivos eletrônicos muitas vezes contêm substâncias
                 perigosas, como mercúrio, chumbo e cádmio. Essas substâncias são
                 tratadas de maneira segura para evitar a contaminação ambiental.
                 Por exemplo, as baterias podem ser separadas e enviadas para
                 instalações especializadas de tratamento.
               </Typography>
-              <Typography variant={"h5"} marginBottom={2} mt={3}>
-                4° Recondicionamento ou Reutilização
+              <Typography variant="h6" fontWeight="bold" mb={2}>
+                4° Recondicionamento ou Reutilização:
               </Typography>
-              <Typography marginBottom={isMobile ? 2 : 0} ml={isMobile ? 2 : 8}>
+              <Typography ml={8} mb={3}>
                 Quando possível, alguns dispositivos eletrônicos podem ser
                 recondicionados e reutilizados. Isso é uma forma eficaz de
-                estender a vida útil dos produtos e reduzir a demanda por
-                novos materiais.
+                estender a vida útil dos produtos e reduzir a demanda por novos
+                materiais.
               </Typography>
             </Grid>
           </Grid>
