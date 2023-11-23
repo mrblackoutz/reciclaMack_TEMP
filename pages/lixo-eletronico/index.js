@@ -91,7 +91,7 @@ export default function Home() {
                 cartuchos e toners, consulte políticas locais de reciclagem;
                 algumas lojas coletam fitas magnéticas e pilhas; fibras óticas e
                 lâmpadas podem ser aceitas em instalações específicas de
-                reciclagem, sujeitas a diretrizes locais.
+                reciclagem, sujeitas a diretrizes locais.
               </Typography>
             </Grid>
           </Grid>
