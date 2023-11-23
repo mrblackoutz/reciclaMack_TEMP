@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Head from "next/head";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Image } from "../components/Image";
@@ -89,14 +89,19 @@ export default function Home() {
             Porque reciclar e-lixo?
           </Typography>
           <Typography>
-            A reciclagem de e-lixo é essencial não apenas para conservar
-            recursos naturais valiosos, mas também para prevenir a contaminação
-            ambiental. Dispositivos eletrônicos descartados incorretamente podem
-            liberar substâncias perigosas, contribuindo para a poluição do solo
-            e da água. Ao reciclar, reduzimos o consumo de energia, minimizamos
-            a emissão de gases de efeito estufa e apoiamos uma economia
-            circular, garantindo que materiais valiosos possam ser reutilizados
-            em novos produtos.
+            A prática da economia circular e a reciclagem são fundamentais para
+            prolongar a vida útil dos materiais eletrônicos. A reciclagem
+            possibilita a reutilização de recursos valiosos, reduzindo a
+            necessidade de extrair novas matérias-primas e diminuindo a poluição
+            associada à fabricação de novos dispositivos. Organizações
+            dedicadas, como a COPERMITI, desempenham um papel fundamental nesse
+            processo, promovendo e facilitando a reciclagem responsável de
+            equipamentos eletrônicos. O descarte consciente e a reciclagem do
+            lixo eletrônico não apenas preservam o ambiente, mas também fomentam
+            um consumo mais sustentável, contribuindo para uma sociedade mais
+            responsável e comprometida com a preservação do planeta. Cada
+            indivíduo tem um papel crucial nessa jornada em direção a um futuro
+            mais sustentável.
           </Typography>
         </Box>
         <Image
