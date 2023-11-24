@@ -58,7 +58,8 @@ const Estudantes = () => {
   );
 };
 
-const Objetivo = () => {
+const Objetivo = (props) => {
+  const {src,title,desc,alt} = props
   return (
     <Box
       display={"flex"}
@@ -71,13 +72,12 @@ const Objetivo = () => {
         sx={{
           width: { md: "80%", xs: "60%" },
         }}
-        src="Ativos_Recicla_Mack/imagem-lixo.png"
-        alt="Circuitos"
+        src={src}
+        alt={alt}
       />
-      <Typography variant={"h5"}>Objetivo</Typography>
+      <Typography variant={"h5"}>{title}</Typography>
       <Typography variant={"body1"} textAlign={"center"} mt={4}>
-        Lorem Ipsum é simplesmente uma simulação de texto da indústria
-        tipográfica.
+        {desc}
       </Typography>
     </Box>
   );
@@ -202,7 +202,7 @@ export default () => {
             sx={{
               width: { md: 80, xs: 100 },
               alignItems: "center",
-              p: 2,
+              m: 0.5,
             }}
             src="Ativos_Recicla_Mack/logo-coopermiti-2.svg"
             alt="Circuitos"
@@ -211,9 +211,9 @@ export default () => {
             sx={{
               width: { md: 80, xs: 100 },
               alignItems: "center",
-              p: 2,
+              m: 0.5,
             }}
-            src="Ativos_Recicla_Mack/mackenzie.svg"
+            src="mackenzie.svg"
             alt="Circuitos"
           />
         </Box>
@@ -253,7 +253,7 @@ export default () => {
             justifyContent={"center"}
             alignItems={"center"}
           >
-            <Objetivo />
+            <Objetivo src="Ativos_Recicla_Mack/imagem-lixo.png" alt="Circuitos" desc="" title="Reduzir o impacto ambiental"/>
           </Grid>
           <Grid
             item
