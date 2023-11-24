@@ -202,16 +202,18 @@ export default () => {
             sx={{
               width: { md: 80, xs: 100 },
               alignItems: "center",
+              p: 2,
             }}
-            src="Ativos_Recicla_Mack/imagem-lixo.png"
+            src="Ativos_Recicla_Mack/logo-coopermiti-2.svg"
             alt="Circuitos"
           />
           <Image
             sx={{
               width: { md: 80, xs: 100 },
               alignItems: "center",
+              p: 2,
             }}
-            src="Ativos_Recicla_Mack/imagem-lixo.png"
+            src="Ativos_Recicla_Mack/mackenzie.svg"
             alt="Circuitos"
           />
         </Box>
