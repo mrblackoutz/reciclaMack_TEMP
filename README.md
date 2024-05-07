@@ -43,13 +43,13 @@ Aqui nós vamos fazer uma cópia do repositório remoto para o nosso local de de
 
 #### Clonagem usando o Terminal/Código:
 
-1.Vá até o repositório que você deseja clonar.
-2.Clique no botão "Code".
-3.Copie a URL que aparece.
-4.Abra o Terminal (Linux/Mac) ou Prompt de Comando/CMD (Windows).
-5.Use o comando cd para navegar até o local onde você deseja armazenar o código.
-6.Execute o comando git clone seguido da URL que você copiou. O comando final deve parecer algo como `git clone https://github.com/username/reponame.git`.
-7.Aguarde enquanto o Git baixa o repositório para a sua máquina.
+1. Vá até o repositório que você deseja clonar.
+2. Clique no botão "Code".
+3. Copie a URL que aparece.
+4. Abra o Terminal (Linux/Mac) ou Prompt de Comando/CMD (Windows).
+5. Use o comando cd para navegar até o local onde você deseja armazenar o código.
+6. Execute o comando git clone seguido da URL que você copiou. O comando final deve parecer algo como `git clone https://github.com/username/reponame.git`.
+7. Aguarde enquanto o Git baixa o repositório para a sua máquina.
 
 ### Passo 2: Instalando as Dependências
 
