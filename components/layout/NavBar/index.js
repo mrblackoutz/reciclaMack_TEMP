@@ -1,14 +1,13 @@
-import React from "react";
-import Link from "next/link";
+import { Computer, ContactMail, Folder, Info, LocationOn } from "@mui/icons-material";
+import { Box, useMediaQuery } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { Box, useMediaQuery } from "@mui/material";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
-import TemporaryDrawer from "./Drawer";
+import React from "react";
+import useThemeContext from "../../../hooks/useThemeContext";
 import { Image } from "../../Image";
-import { Computer, ContactMail, Folder, Info, LocationOn } from "@mui/icons-material";
+import TemporaryDrawer from "./Drawer";
 
 const StyledLink = ({ href, children, style }) => {
   return (
@@ -22,6 +21,14 @@ const NavBar = () => {
   const isMobile = useMediaQuery("(max-width:700px)");
   const router = useRouter();
   const [currentPath, setCurrentPath] = React.useState(router.pathname);
+  const {
+    isDarkMode,
+    toggleDarkMode,
+    colorblindMode,
+    toggleColorblindMode,
+    increaseFontSize,
+    decreaseFontSize,
+  } = useThemeContext();
   const links = [
     { path: "/quem-somos", texto: "Quem somos", icone: <Info /> },
     { path: "/lixo-eletronico", texto: "Lixo Eletrônico", icone: <Computer /> },
@@ -101,6 +108,8 @@ const NavBar = () => {
               ))}
             </Box>
           )}
+          {/* Adicionar Icone aqui ou em outro lugar para lidar com opções de acessibilidade */}
+          {/* Usar as funções exportadas do ThemeProvider, para alterar seus estados */}
         </Toolbar>
       </AppBar>
     </div>
