@@ -1,13 +1,22 @@
 import { Box, Button } from '@mui/material';
+import Image from 'next/image';
 
-export default function Outros(props) {
+export interface OutrosProps {
+  id: number;
+  titulo: string;
+  descricao: string;
+  imagem: string;
+  buttonbg: string;
+}
+
+export default function Outros(props: OutrosProps) {
   const { id, titulo, descricao, imagem, buttonbg } = props;
 
   return (
     <Box
-      id={id}
+      id={`${id}`}
       display={'flex'}
-      flexDirection={id % 2 == 1 ? 'row' : 'row-reverse'}
+      flexDirection={id % 2 === 1 ? 'row' : 'row-reverse'}
       alignItems={'center'}
       color={'#fff'}
     >
@@ -31,7 +40,7 @@ export default function Outros(props) {
         </Button>
       </Box>
       <Box width={'10%'}></Box>
-      <img
+      <Image
         src={imagem}
         alt={titulo}
         style={{

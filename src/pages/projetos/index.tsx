@@ -1,9 +1,10 @@
 'use client';
 import { Box, useMediaQuery } from '@mui/material';
-import Projetos from './projetos';
-import DetalhesEvento from './evento';
+import Projetos from './components/projetos';
+import DetalhesEvento from './components/evento';
 
 function Projects() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const isMobile = useMediaQuery('(max-width:600px)');
 
   return (

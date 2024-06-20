@@ -1,196 +1,29 @@
 'use client';
 import { Box, Grid, useMediaQuery } from '@mui/material';
-import Image from '../../components/Image';
-import CustomTypography from '../../components/CustomTypography';
-import Carousel from './Carousel';
+import Image from '@/components/Image';
+import CustomTypography from '@/components/CustomTypography';
+import Carousel from './components/Carousel';
+import Objetivo from './components/Objetivos';
+import Estudantes from './components/Estudantes';
+import Testemunhos from './components/Testemunhos';
+import Usuarios from './components/Usuarios';
+import { messages } from '@/messages';
 
-const Estudantes = () => {
-  return (
-    <Box ml={4} mr={4}>
-      <Box
-        borderRadius={'10px 10px 0px 0px'} // deixa os cantos arredondados, mas somente o canto superior direito e esquerdo
-        height={'150px'}
-        width={'100%'}
-        display={'flex'}
-        justifyContent={'center'}
-        alignContent={'center'}
-        alignItems={'center'}
-        bgcolor={'#00844D'}
-      >
-        <Image
-          sx={{
-            width: { md: 'auto' },
-            height: { md: 70 },
-          }}
-          src="Ativos_Recicla_Mack/icone-imagem-duas-peassoas.png"
-          alt="Circuitos"
-        />
-      </Box>
-      <Box
-        height={'200px'}
-        width={'100%'}
-        bgcolor={'primary.main'}
-        borderRadius={'0px 0px 10px 10px'}
-        pt={4}
-        pl={2}
-        pr={2}
-        color={'white'}
-      >
-        <CustomTypography variant={'body1'} fontWeight={'bold'}>
-          Nomes:{' '}
-          <CustomTypography variant={'body1'} component={'span'}>
-            Fulano de tal
-          </CustomTypography>
-        </CustomTypography>
-        <CustomTypography variant={'body1'} fontWeight={'bold'}>
-          Curso:{' '}
-          <CustomTypography variant={'body1'} component={'span'}>
-            Ciências da computação
-          </CustomTypography>
-        </CustomTypography>
-        <CustomTypography variant={'body1'} fontWeight={'bold'}>
-          Região:{' '}
-          <CustomTypography variant={'body1'} component={'span'}>
-            Fulano de tal
-          </CustomTypography>
-        </CustomTypography>
-      </Box>
-    </Box>
-  );
-};
-
-interface ObjetivoProps {
-  src?: string;
-  title?: string;
-  desc?: string;
-  alt?: string;
-}
-
-const Objetivo: React.FC<ObjetivoProps> = (props) => {
-  const { src, title, desc, alt } = props;
-  return (
-    <Box
-      display={'flex'}
-      flexDirection={'column'}
-      alignItems={'center'}
-      width={'30%'}
-      justifyContent={'center'}
-    >
-      <Image
-        sx={{
-          width: { md: '80%', xs: '60%' },
-        }}
-        src={src}
-        alt={alt}
-      />
-      <CustomTypography variant={'h5'}>{title}</CustomTypography>
-      <CustomTypography variant={'body1'} textAlign={'center'} mt={4}>
-        {desc}
-      </CustomTypography>
-    </Box>
-  );
-};
-
-const Testemunhos = () => {
-  return (
-    <Box
-      bgcolor={'white'}
-      width={{ md: '380px', xs: '300px' }}
-      height={'180px'}
-      borderRadius={2}
-      display={'flex'}
-      justifyContent={'center'}
-      alignItems={'center'}
-      flexDirection={'row'}
-    >
-      <Image
-        sx={{
-          maxWidth: '30%',
-          pl: 2,
-        }}
-        src="Ativos_Recicla_Mack/imagem-lixo.png"
-        alt="Circuitos"
-      />
-      <Box>
-        <CustomTypography variant={'body1'} fontWeight={'bold'}>
-          Nomes:{' '}
-          <CustomTypography variant={'body1'} component={'span'}>
-            Fulano de tal
-          </CustomTypography>
-        </CustomTypography>
-        <CustomTypography variant={'body1'} fontWeight={'bold'}>
-          Data:{' '}
-          <CustomTypography variant={'body1'} component={'span'}>
-            dd/MM/YYYY
-          </CustomTypography>
-        </CustomTypography>
-        <CustomTypography variant={'body1'} fontWeight={'bold'} mt={2}>
-          Comentário:{' '}
-          <CustomTypography variant={'body1'} component={'span'}>
-            Gosto muito do trabalho de vocês
-          </CustomTypography>
-        </CustomTypography>
-      </Box>
-    </Box>
-  );
-};
-
-const Usuarios = () => {
-  return (
-    <Box
-      bgcolor={'primary.main'}
-      width={{ md: '380px', xs: '300px' }}
-      height={'180px'}
-      borderRadius={2}
-      display={'flex'}
-      justifyContent={'center'}
-      alignItems={'center'}
-      flexDirection={'row'}
-    >
-      <Image
-        sx={{
-          maxWidth: '30%',
-          pl: 2,
-        }}
-        src="Ativos_Recicla_Mack/imagem-lixo.png"
-        alt="Circuitos"
-      />
-      <Box>
-        <CustomTypography variant={'body1'} fontWeight={'bold'}>
-          Nomes:{' '}
-          <CustomTypography variant={'body1'} component={'span'}>
-            Fulano de tal
-          </CustomTypography>
-        </CustomTypography>
-        <CustomTypography variant={'body1'} fontWeight={'bold'}>
-          Data:{' '}
-          <CustomTypography variant={'body1'} component={'span'}>
-            dd/MM/YYYY
-          </CustomTypography>
-        </CustomTypography>
-        <CustomTypography variant={'body1'} fontWeight={'bold'} mt={2}>
-          Comentário:{' '}
-          <CustomTypography variant={'body1'} component={'span'}>
-            Gosto muito do trabalho de vocês
-          </CustomTypography>
-        </CustomTypography>
-      </Box>
-    </Box>
-  );
-};
-
+// Componente principal WhoWeAre
 const WhoWeAre = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
     <div>
+      {/* Seção de Apoio Institucional */}
       <Box
         bgcolor={'primary.main'}
         color={'black'}
         width={'100%'}
         height={{ md: 400, xs: '100%' }}
         display={'flex'}
-        flexDirection={{ xs: 'column' }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
+        flexDirection={{ xs: 'column' }}
         justifyContent={'center'}
       >
         <Box ml={10} mb={5}>
@@ -200,7 +33,7 @@ const WhoWeAre = () => {
             fontWeight={'bold'}
             textAlign={'left'}
           >
-            Apoio Institucional
+            {messages.sobreNosPage.apoiadores}
           </CustomTypography>
         </Box>
         <Box ml={10} mr={10} pb={2}>
@@ -225,6 +58,7 @@ const WhoWeAre = () => {
         </Box>
       </Box>
 
+      {/* Seção de Objetivos e Metas */}
       <Grid
         container
         direction={'column'}
@@ -238,7 +72,7 @@ const WhoWeAre = () => {
       >
         <Grid item ml={12} mb={5}>
           <CustomTypography variant={'h4'} fontWeight={'bold'} align={'left'}>
-            Objetivos e metas
+            {messages.sobreNosPage.objetivos}
           </CustomTypography>
         </Grid>
         <Grid
@@ -262,7 +96,7 @@ const WhoWeAre = () => {
             <Objetivo
               src="Ativos_Recicla_Mack/imagem-lixo.png"
               alt="Circuitos"
-              desc=""
+              desc="(vazio)"
               title="Reduzir o impacto ambiental"
             />
           </Grid>
@@ -289,19 +123,15 @@ const WhoWeAre = () => {
         </Grid>
       </Grid>
 
+      {/* Seção de Estudantes Parceiros */}
       <Grid
         container
         style={{ backgroundColor: '#10B14A' }}
         pb={8}
         justifyContent={'center'}
-        //spacing={5} // ajustar o espaçamento conforme necessário
       >
         <Grid item xs={12} container>
-          <Grid
-            item
-            xs={12}
-            md={12} // desktop
-          >
+          <Grid item xs={12} md={12}>
             <CustomTypography
               variant={'h4'}
               ml={10}
@@ -314,7 +144,7 @@ const WhoWeAre = () => {
               }}
               textAlign={'left'}
             >
-              Estudantes parceiros
+              {messages.sobreNosPage.estudantesParceiros}
             </CustomTypography>
           </Grid>
         </Grid>
@@ -331,13 +161,14 @@ const WhoWeAre = () => {
         </Grid>
       </Grid>
 
+      {/* Seção de Testemunhos */}
       <Box
         bgcolor={'#00844D'}
         color={'black'}
         width={'100%'}
         height={'100%'}
         display={'flex'}
-        flexDirection={{ xs: 'column' }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
+        flexDirection={{ xs: 'column' }}
         justifyContent={'center'}
       >
         <CustomTypography
@@ -350,7 +181,7 @@ const WhoWeAre = () => {
           textAlign={'left'}
           color={'white'}
         >
-          Testemunhos
+          {messages.sobreNosPage.testemunhos}
         </CustomTypography>
         <CustomTypography
           variant={'h5'}
@@ -360,7 +191,7 @@ const WhoWeAre = () => {
           ml={12}
           mb={5}
         >
-          Colaboradores
+          {messages.sobreNosPage.colaboradores}
         </CustomTypography>
         <Box
           display={'flex'}
@@ -368,7 +199,7 @@ const WhoWeAre = () => {
           width={'100%'}
           justifyContent={'center'}
           pb={8}
-          sx={{ overflowX: 'hidden' }} // Impede a barra de rolagem horizontal
+          sx={{ overflowX: 'hidden' }}
         >
           <Carousel>
             <Testemunhos />
@@ -378,13 +209,15 @@ const WhoWeAre = () => {
           </Carousel>
         </Box>
       </Box>
+
+      {/* Seção de Usuários */}
       <Box
         bgcolor={'white'}
         color={'black'}
         width={'100%'}
         height={'100%'}
         display={'flex'}
-        flexDirection={{ xs: 'column' }} // define a direção dos itens (vertical para telas pequenas e horizontal para telas médias e acima)
+        flexDirection={{ xs: 'column' }}
         justifyContent={'center'}
       >
         <Box ml={10} mr={10} mt={7} mb={1}>
@@ -394,7 +227,7 @@ const WhoWeAre = () => {
             fontWeight={'bold'}
             textAlign={'left'}
           >
-            Usuários
+            {messages.sobreNosPage.usuarios}
           </CustomTypography>
         </Box>
         <Box
@@ -405,7 +238,7 @@ const WhoWeAre = () => {
           height={'100%'}
           justifyContent={'center'}
           pb={8}
-          sx={{ overflowX: 'hidden' }} // Impede a barra de rolagem horizontal
+          sx={{ overflowX: 'hidden' }}
         >
           <Carousel>
             <Usuarios />

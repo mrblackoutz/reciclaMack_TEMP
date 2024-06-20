@@ -2,6 +2,7 @@
 import { Box } from '@mui/material';
 import Image from '../components/Image';
 import CustomTypography from '../components/CustomTypography';
+import { messages } from '@/messages';
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       >
         <Image
           src="Ativos_Recicla_Mack/banner1.png"
-          alt="Descrição da imagem"
+          alt={messages.homePage.bannerAlt}
           width={'100%'}
           sx={{ opacity: 0.6 }}
         />
@@ -31,7 +32,7 @@ export default function Home() {
           fontSize={{ md: 40, xs: 25 }}
           p={3}
         >
-          Revitalizando a Tecnologia, Reenergizando o Planeta!
+          {messages.homePage.revitalizando}
         </CustomTypography>
       </Box>
       <Box
@@ -55,13 +56,10 @@ export default function Home() {
         />
         <Box px={6} pt={{ xs: 0, md: 10 }} pb={10}>
           <CustomTypography variant={'h4'} gutterBottom>
-            Quais são os objetivos do projeto?
+            {messages.homePage.objetivos}
           </CustomTypography>
           <CustomTypography>
-            Nosso projeto visa moldar práticas sustentáveis na gestão do lixo
-            eletrônico: conscientizar a comunidade da FCI sobre a reciclagem,
-            instruir sobre a separação correta de resíduos, e indicar os pontos
-            de descarte adequado. Junte-se a nós nessa jornada verde!
+            {messages.homePage.objetivosTexto}
           </CustomTypography>
         </Box>
       </Box>
@@ -78,22 +76,10 @@ export default function Home() {
       >
         <Box px={6} py={{ xs: 2, md: 10 }} pt={{ xs: 10, md: 10 }}>
           <CustomTypography variant={'h4'} gutterBottom>
-            Porque reciclar e-lixo?
+            {messages.homePage.porqueReciclar}
           </CustomTypography>
           <CustomTypography>
-            A prática da economia circular e a reciclagem são fundamentais para
-            prolongar a vida útil dos materiais eletrônicos. A reciclagem
-            possibilita a reutilização de recursos valiosos, reduzindo a
-            necessidade de extrair novas matérias-primas e diminuindo a poluição
-            associada à fabricação de novos dispositivos. Organizações
-            dedicadas, como a COPERMITI, desempenham um papel fundamental nesse
-            processo, promovendo e facilitando a reciclagem responsável de
-            equipamentos eletrônicos. O descarte consciente e a reciclagem do
-            lixo eletrônico não apenas preservam o ambiente, mas também fomentam
-            um consumo mais sustentável, contribuindo para uma sociedade mais
-            responsável e comprometida com a preservação do planeta. Cada
-            indivíduo tem um papel crucial nessa jornada em direção a um futuro
-            mais sustentável.
+            {messages.homePage.porqueReciclarTexto}
           </CustomTypography>
         </Box>
         <Image

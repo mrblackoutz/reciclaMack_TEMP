@@ -1,11 +1,4 @@
-import {
-  Computer,
-  ContactMail,
-  Folder,
-  Info,
-  LocationOn,
-  AccessibilityNew,
-} from '@mui/icons-material';
+import { AccessibilityNew } from '@mui/icons-material';
 import {
   Box,
   useMediaQuery,
@@ -20,10 +13,10 @@ import CustomTypography from '@/components/CustomTypography';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import useThemeContext from '../../../hooks/useThemeContext';
-import { useTheme } from '@mui/material/styles';
+import useThemeContext from '@/hooks/useThemeContext';
 import Image from 'next/image';
 import TemporaryDrawer from './Drawer';
+import { pages } from '@/@core/routes';
 
 const StyledLink = ({
   href,
@@ -53,17 +46,6 @@ const NavBar = () => {
     increaseFontSize,
     decreaseFontSize,
   } = useThemeContext();
-  const links = [
-    { path: '/quem-somos', texto: 'Quem somos', icone: <Info /> },
-    { path: '/lixo-eletronico', texto: 'Lixo Eletrônico', icone: <Computer /> },
-    {
-      path: '/pontos-de-coleta',
-      texto: 'Pontos de coleta',
-      icone: <LocationOn />,
-    },
-    { path: '/projetos', texto: 'Projetos', icone: <Folder /> },
-    { path: '/contato', texto: 'Contato', icone: <ContactMail /> },
-  ];
 
   React.useEffect(() => {
     const handleRouteChange = (url: React.SetStateAction<string>) => {
@@ -123,15 +105,15 @@ const NavBar = () => {
               alignItems="center"
             >
               {isMobile ? (
-                <TemporaryDrawer links={links} currentPath={currentPath} />
+                <TemporaryDrawer links={pages} currentPath={currentPath} />
               ) : (
-                links.map((link, index) => (
+                pages.map((link, index) => (
                   <StyledLink
                     key={link.path}
                     href={link.path}
                     style={{
                       color: '#f7f7f7',
-                      marginRight: index !== links.length - 1 ? 16 : 0,
+                      marginRight: index !== pages.length - 1 ? 16 : 0,
                       fontWeight: currentPath === link.path ? 'bold' : 'normal',
                       fontSize: currentPath === link.path ? 18 : 16,
                       textAlign: 'center',

@@ -35,7 +35,7 @@ CustomDocument.getInitialProps = async (ctx) => {
     originalRenderPage({
       enhanceApp: (App) => (props) => (
         <App
-          {...props} // @ts-expect-error
+          {...props} // @ts-expect-error Description: Ignoring type error because the emotionCache prop is not recognized by the App component.
           emotionCache={cache}
         />
       ),

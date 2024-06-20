@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import CustomTypography from '../../components/CustomTypography';
+import CustomTypography from '@/components/CustomTypography';
 
 interface DetalhesEventoProps {
   titulo: string;

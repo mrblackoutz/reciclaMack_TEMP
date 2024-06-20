@@ -4,6 +4,7 @@ import { Box, Grid, useMediaQuery } from '@mui/material';
 import CustomTypography from '@/components/CustomTypography';
 import Image from '@/components/Image';
 import StyledLink from '@/components/StyledLink';
+import { messages } from '@/messages';
 
 const ReciclaMackLabel = ({ fontSize }: { fontSize: string }) => {
   return (
@@ -11,12 +12,12 @@ const ReciclaMackLabel = ({ fontSize }: { fontSize: string }) => {
       color={'#10B14A'}
       sx={{ fontWeight: 'bold', fontSize: fontSize }}
     >
-      Recicla
+      {messages.footer.recicla}
       <CustomTypography
         component="span"
         sx={{ color: 'red', fontWeight: 'bold', fontSize: fontSize }}
       >
-        Mack
+        {messages.footer.mack}
       </CustomTypography>
     </CustomTypography>
   );
@@ -44,7 +45,7 @@ const WebsiteFooter = () => {
                 <Image
                   src="mackenzie.svg"
                   style={{ height: isMobile ? 45 : 80, margin: 10 }}
-                  alt="Mackenzie Logo"
+                  alt={messages.footer.mackenzieLogoAlt}
                 />
               </StyledLink>
               <ReciclaMackLabel fontSize={isMobile ? '18px' : '22px'} />
@@ -52,7 +53,7 @@ const WebsiteFooter = () => {
                 <Image
                   src="atletica.svg"
                   style={{ height: isMobile ? 45 : 80, margin: 10 }}
-                  alt="Mackenzie Logo"
+                  alt={messages.footer.atleticaLogoAlt}
                 />
               </StyledLink>
             </Box>
@@ -71,31 +72,31 @@ const WebsiteFooter = () => {
                 href="/quem-somos"
                 style={{ color: '#f7f7f7', fontSize: '16px' }}
               >
-                Sobre nós
+                {messages.aboutUs}
               </Link>
               <Link
-                href="/quem-somos"
+                href="/lixo-eletronico"
                 style={{ color: '#f7f7f7', fontSize: '16px' }}
               >
-                O que Reciclar
+                {messages.whatToRecycle}
               </Link>
               <Link
-                href="/quem-somos"
+                href="/lixo-eletronico"
                 style={{ color: '#f7f7f7', fontSize: '16px' }}
               >
-                Como Reciclar
+                {messages.howToRecycle}
               </Link>
               <Link
-                href="/quem-somos"
+                href="/contato"
                 style={{ color: '#f7f7f7', fontSize: '16px' }}
               >
-                FAQ
+                {messages.faqComponent.faq}
               </Link>
               <Link
-                href="/quem-somos"
+                href="/contato"
                 style={{ color: '#f7f7f7', fontSize: '16px' }}
               >
-                Contato
+                {messages.contatoPage.contato}
               </Link>
             </Box>
           </Grid>
@@ -137,24 +138,24 @@ const WebsiteFooter = () => {
           <Grid item xs={6} md={3} display={'flex'} alignItems={'center'}>
             <Box width={'100%'} m={1}>
               <Box display={'flex'} alignItems={'center'} mt={1}>
-                <img
+                <Image
                   src="Ativos_Recicla_Mack/icone-telefone.png"
                   style={{ height: iconSize }}
-                  alt="Icone de telefone"
+                  alt={messages.footer.telefoneIconAlt}
                 />
                 <CustomTypography
                   color={'#f7f7f7'}
                   variant="body2"
                   sx={{ ml: 1, textDecoration: 'underline' }}
                 >
-                  (XX) XXXXX-XXXX
+                  {messages.footer.telefoneMackenzie}
                 </CustomTypography>
               </Box>
               <Box display={'flex'} alignItems={'center'} mt={1}>
-                <img
+                <Image
                   src="Ativos_Recicla_Mack/icone-email.png"
                   style={{ height: iconSize }}
-                  alt="Icone de email"
+                  alt={messages.footer.emailIconAlt}
                 />
                 <CustomTypography
                   color={'#f7f7f7'}
@@ -165,47 +166,47 @@ const WebsiteFooter = () => {
                     wordBreak: 'break-all',
                   }}
                 >
-                  contato@email.com.br
+                  {messages.footer.emailMackenzie}
                 </CustomTypography>
               </Box>
               <Box display={'flex'} alignItems={'center'} mt={1}>
-                <img
+                <Image
                   src="Ativos_Recicla_Mack/icone-local.png"
                   style={{ height: iconSize }}
-                  alt="Icone de localização"
+                  alt={messages.footer.localIconAlt}
                 />
                 <CustomTypography
                   color={'#f7f7f7'}
                   variant="body2"
                   sx={{ ml: 1, textDecoration: 'underline' }}
                 >
-                  Rua endereço do local, nº 439
+                  {messages.footer.localMackenzie}
                 </CustomTypography>
               </Box>
               <Box marginTop={2}>
-                <img
+                <Image
                   src="Ativos_Recicla_Mack/icone-logo-whatsapp.png"
-                  alt="Icone de Whatsapp"
+                  alt={messages.footer.whatsappIconAlt}
                   style={{ height: iconSize, marginRight: 12 }}
                 />
-                <img
+                <Image
                   src="Ativos_Recicla_Mack/icone-logo-youtube.png"
-                  alt="Icone de Whatsapp"
+                  alt={messages.footer.youtubeIconAlt}
                   style={{ height: iconSize, marginRight: 12 }}
                 />
-                <img
+                <Image
                   src="Ativos_Recicla_Mack/icone-logo-facebook.png"
-                  alt="Icone de Facebook"
+                  alt={messages.footer.facebookIconAlt}
                   style={{ height: iconSize, marginRight: 12 }}
                 />
-                <img
+                <Image
                   src="Ativos_Recicla_Mack/icone-logo-instagram.png"
-                  alt="Icone de Whatsapp"
+                  alt={messages.footer.instagramIconAlt}
                   style={{ height: iconSize, marginRight: 12 }}
                 />
-                <img
+                <Image
                   src="Ativos_Recicla_Mack/icone-logo-linkedin.png"
-                  alt="Icone de Whatsapp"
+                  alt={messages.footer.linkedinIconAlt}
                   style={{ height: iconSize, marginRight: 12 }}
                 />
               </Box>
@@ -218,13 +219,12 @@ const WebsiteFooter = () => {
         color={'ffffff'}
         bgcolor={'#000000'}
         width={'100%'}
-        height={'10vh'}
+        py={3}
         justifyContent={'center'}
         alignItems="center"
       >
         <CustomTypography variant="body1" color={'white'} ml={2} mr={2}>
-          © 2024 – ReciclaMack, Faculdade de Computação e Informática,
-          Mackenzie
+          {messages.footer.copyRight}
         </CustomTypography>
       </Box>
     </footer>

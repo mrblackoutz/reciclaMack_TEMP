@@ -72,7 +72,9 @@ const Card = ({ title, description, textButton }: CardProps) => {
 };
 
 const Contact = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const isMobile = useMediaQuery('(max-width:700px)');
+
   return (
     <div>
       <Grid
