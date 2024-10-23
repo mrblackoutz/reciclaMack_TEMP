@@ -1,5 +1,7 @@
 'use client';
-import { Box, Grid, useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import CustomizedButtons from './customButton';
 import CustomTypography from '../../components/CustomTypography';
 import YouTubeIcon from '@mui/icons-material/YouTube';

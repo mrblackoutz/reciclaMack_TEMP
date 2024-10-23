@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { Box, Grid, useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import CustomTypography from '@/components/CustomTypography';
 import Image from '@/components/Image';
 import StyledLink from '@/components/StyledLink';

@@ -1,8 +1,7 @@
-'use client';
-import { Box } from '@mui/material';
 import Image from '../components/Image';
 import CustomTypography from '../components/CustomTypography';
 import { messages } from '@/messages';
+import { Box } from '@mui/material';
 
 export default function Home() {
   return (

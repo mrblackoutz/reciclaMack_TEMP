@@ -1,4 +1,3 @@
-import { CssBaseline } from '@mui/material';
 import Layout from '../components/layout';
 import CustomThemeProvider from '../context/ThemeProvider';
 import { NextPage } from 'next';
@@ -37,7 +36,6 @@ export default function MyApp({
       </Head>
       <CustomThemeProvider>
         <Layout>
-          <CssBaseline />
           <Component {...pageProps} />
         </Layout>
       </CustomThemeProvider>

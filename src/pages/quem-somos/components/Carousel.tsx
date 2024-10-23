@@ -1,7 +1,7 @@
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 // import { styled } from "@mui/system";
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import { CSSProperties } from 'react';
 
 // const StyledButton = styled("button")({

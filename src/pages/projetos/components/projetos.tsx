@@ -1,5 +1,8 @@
 import React from 'react';
-import { Box, Grid, Button } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import { useTheme } from '@mui/material/styles';
 import CustomTypography from '@/components/CustomTypography';
 import { messages } from '@/messages';
 
@@ -23,8 +26,6 @@ const items = [
     corBotao: 'primary' as const,
   },
 ];
-
-import { useTheme } from '@mui/material/styles';
 
 const ItemProjetos = ({
   titulo,

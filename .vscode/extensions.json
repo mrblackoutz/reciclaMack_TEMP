@@ -1,8 +1,7 @@
 {
-    "recommendations": [
-        "esbenp.prettier-vscode",
-        "usernamehw.errorlens",
-        "dsznajder.es7-react-js-snippets",
-        "dbaeumer.vscode-eslint"
-    ]
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint"
+  ]
 }

@@ -1,5 +1,6 @@
 'use client';
-import { Box, useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Projetos from './components/projetos';
 import DetalhesEvento from './components/evento';
 

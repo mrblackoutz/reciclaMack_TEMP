@@ -1,5 +1,8 @@
 'use client';
-import { Box, Button, Grid, useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Image from '../../components/Image';
 import CustomTypography from '../../components/CustomTypography';
 import React from 'react';

@@ -1,6 +1,9 @@
 'use client';
 import Head from 'next/head';
-import { Box, Divider, Grid, useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Image from '../../components/Image';
 import CustomTypography from '../../components/CustomTypography';
 

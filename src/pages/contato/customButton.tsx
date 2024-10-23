@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import Button, { ButtonProps } from '@mui/material/Button';
+import Button from '@mui/material/Button';
+import { ButtonProps } from '@mui/material/Button';
 
 const ColorButton = styled(Button)(() => ({
   color: '#00B59F',

@@ -1,7 +1,6 @@
 // ThemeProvider.js
 import { createContext, useState } from 'react';
-import { ThemeProvider } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { ReactNode } from 'react';
 import theme from '@/@core/theme';
 
@@ -73,6 +72,7 @@ const CustomThemeProvider = ({ children }: CustomThemeProviderProps) => {
         decreaseFontSize,
       }}
     >
+      <CssBaseline />
       <ThemeProvider theme={customTheme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );

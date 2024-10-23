@@ -1,6 +1,6 @@
 // CustomTypography.js
 import React from 'react';
-import { Typography, TypographyProps } from '@mui/material';
+import Typography, { TypographyProps } from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
 const getFontSize = (size: string | number | undefined) => {

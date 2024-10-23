@@ -1,4 +1,5 @@
 # ReciclaMack
+
 Projeto desenvolvido em conjunto com outros universitários, para construção de um site, em conjunto com uma cooperativa atuante no meio de reciclagem eletrônica. [Página na Vercel](https://recicla-mack.vercel.app/)
 
 ## Tecnologias Utilizadas
@@ -39,7 +40,7 @@ Aqui nós vamos fazer uma cópia do repositório remoto para o nosso local de de
 3. Digite `git: clone` e pressione `Enter`.
 4. Insira o URL do seu repositório do projeto (Em "Code" no GitHub) e pressione `Enter`.
 5. Selecione a localização onde deseja guardar o clone do projeto localmente e pressione `Enter`.
-![Captura de tela com exemplo de como clonar um repositório](https://i.imgur.com/mUYoQ2C.png)
+   ![Captura de tela com exemplo de como clonar um repositório](https://i.imgur.com/mUYoQ2C.png)
 
 #### Clonagem usando o Terminal/Código:
 
@@ -60,7 +61,6 @@ Aqui nós vamos fazer uma cópia do repositório remoto para o nosso local de de
 
 1. No terminal, digite `npm run dev` para iniciar o servidor de desenvolvimento.
 2. Abra o navegador e acesse `http://localhost:3000`. Lá você verá o projeto rodando.
-
 
 ## Links da Documentação
 

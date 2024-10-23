@@ -1,5 +1,5 @@
 import CustomTypography from '@/components/CustomTypography';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import Image from '@/components/Image';
 
 // Componente para renderizar um objetivo

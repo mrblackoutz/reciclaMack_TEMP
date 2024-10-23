@@ -1,4 +1,5 @@
 import * as React from 'react';
+import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -6,8 +7,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { IconButton } from '@mui/material';
-import { Close, Menu } from '@mui/icons-material';
+import Close from '@mui/icons-material/Close';
+import Menu from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import StyledLink from '@/components/StyledLink';
 
