@@ -1,4 +1,4 @@
-import { montserrat, poppins } from '@/pages/_document';
+import { montserrat, poppins } from '@/fonts';
 import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
@@ -16,20 +16,18 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      poppins.style.fontFamily,
       montserrat.style.fontFamily,
+      poppins.style.fontFamily,
       'Inter',
       '-apple-system',
       'sans-serif',
     ].join(','),
-    // Defina as fontes específicas para cada variante tipográfica
     h1: {
       fontFamily: poppins.style.fontFamily,
     },
     h2: {
       fontFamily: montserrat.style.fontFamily,
     },
-    // Adicione outras variações tipográficas conforme necessário
   },
   breakpoints: {
     values: {
@@ -47,8 +45,8 @@ const theme = createTheme({
           margin: 0,
           padding: 0,
           fontFamily: [
-            'Poppins',
-            'Montserrat',
+            poppins.style.fontFamily,
+            montserrat.style.fontFamily,
             'Inter',
             '-apple-system',
             'sans-serif',

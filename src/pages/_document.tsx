@@ -3,7 +3,6 @@ import { Children } from 'react';
 
 // ** Next Import
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { Montserrat, Poppins } from 'next/font/google';
 
 // ** Emotion Imports
 import createEmotionServer from '@emotion/server/create-instance';
@@ -11,24 +10,10 @@ import createEmotionServer from '@emotion/server/create-instance';
 // ** Utils Imports
 import { createEmotionCache } from '@/@core/utils/create-emotion-cache';
 
-export const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-});
-
-export const poppins = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '100',
-});
-
 class CustomDocument extends Document {
   render() {
     return (
-      <Html
-        lang="pt-br"
-        className={`${poppins.style.fontFamily} ${poppins.style.fontFamily}`}
-      >
+      <Html lang="pt-br">
         <Head>
           <link rel="icon" href="/favicon.ico" />
         </Head>
