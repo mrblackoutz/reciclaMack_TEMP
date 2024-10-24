@@ -25,7 +25,10 @@ export const poppins = Poppins({
 class CustomDocument extends Document {
   render() {
     return (
-      <Html lang="pt-br" className="">
+      <Html
+        lang="pt-br"
+        className={`${poppins.style.fontFamily} ${poppins.style.fontFamily}`}
+      >
         <Head>
           <link rel="icon" href="/favicon.ico" />
         </Head>
