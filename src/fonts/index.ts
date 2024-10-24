@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Montserrat, Poppins } from 'next/font/google';
 
 export const montserrat = Montserrat({
