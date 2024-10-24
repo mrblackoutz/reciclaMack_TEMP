@@ -1,4 +1,4 @@
-import { montserrat, poppins } from '@/fonts/indexerr';
+import { montserrat, poppins } from '@/fonts';
 import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
