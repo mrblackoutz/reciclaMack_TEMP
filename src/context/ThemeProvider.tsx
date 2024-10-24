@@ -1,6 +1,7 @@
 // ThemeProvider.js
 import { createContext, useState } from 'react';
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import { ReactNode } from 'react';
 import theme from '@/@core/theme';
 

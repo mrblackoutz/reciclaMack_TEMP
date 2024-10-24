@@ -1,14 +1,12 @@
 import { AccessibilityNew } from '@mui/icons-material';
-import {
-  Box,
-  useMediaQuery,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Menu,
-  MenuItem,
-  Grid,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Grid from '@mui/material/Grid';
 import CustomTypography from '@/components/CustomTypography';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -57,7 +55,6 @@ const NavBar = () => {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
