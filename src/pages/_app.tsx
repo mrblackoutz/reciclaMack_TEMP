@@ -4,8 +4,6 @@ import { NextPage } from 'next';
 import { AppProps } from 'next/app';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import Head from 'next/head';
-import '@fontsource/poppins';
-import '@fontsource/montserrat';
 import { createEmotionCache } from '@/@core/utils/create-emotion-cache';
 
 type ExtendedAppProps = AppProps & {
