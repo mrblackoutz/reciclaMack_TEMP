@@ -37,10 +37,10 @@ export const messages = {
     revitalizando: 'Revitalizando a Tecnologia, Reenergizando o Planeta!',
     objetivos: 'Quais são os objetivos do projeto?',
     objetivosTexto:
-      'Nosso projeto visa moldar práticas sustentáveis na gestão do lixo',
+      'Nosso projeto tem como objetivo promover práticas sustentáveis na gestão de resíduos, buscando transformar a forma como lidamos com o lixo. Acreditamos que, ao adotar métodos eficientes de reciclagem e conscientização ambiental, podemos contribuir para um futuro mais limpo e saudável para todos.',
     porqueReciclar: 'Por que reciclar e-lixo?',
     porqueReciclarTexto:
-      'A prática da economia circular e a reciclagem são fundamentais para prolongar a vida útil dos materiais eletrônicos. A reciclagem possibilita a reutilização de recursos valiosos, reduzindo a necessidade de extrair novas matérias-primas e diminuindo a poluição associada à fabricação de novos dispositivos. Organizações dedicadas, como a COPERMITI, desempenham um papel fundamental nesse processo, promovendo e facilitando a reciclagem responsável de equipamentos eletrônicos. O descarte consciente e a reciclagem do lixo eletrônico não apenas preservam o ambiente, mas também fomentam um consumo mais sustentável, contribuindo para uma sociedade mais responsável e comprometida com a preservação do planeta. Cada indivíduo tem um papel crucial nessa jornada em direção a um futuro mais sustentável.',
+      'A economia circular e a reciclagem são essenciais para prolongar a vida útil dos materiais eletrônicos. A reciclagem reutiliza recursos valiosos, reduzindo a extração de novas matérias-primas e a poluição na fabricação de novos dispositivos. Organizações especializadas ajudam nesse processo, promovendo a reciclagem responsável de eletrônicos. Descartar e reciclar lixo eletrônico protege o meio ambiente e incentiva um consumo mais sustentável. Cada pessoa tem um papel importante na construção de um futuro mais sustentável.',
 
     bannerAlt: 'Banner da página inicial',
   },
