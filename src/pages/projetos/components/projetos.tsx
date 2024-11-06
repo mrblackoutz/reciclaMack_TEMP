@@ -1,6 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid2'
 import Button from '@mui/material/Button'
 import { useTheme } from '@mui/material/styles'
 import CustomTypography from '@/components/CustomTypography'
@@ -65,7 +65,7 @@ const Projetos = () => {
 			</CustomTypography>
 			<Grid container spacing={6} direction='row' justifyContent='center' alignItems='center' sx={{ p: 2 }}>
 				{items.map((item, index) => (
-					<Grid key={index} item>
+					<Grid key={index}>
 						<ItemProjetos {...item} />
 					</Grid>
 				))}

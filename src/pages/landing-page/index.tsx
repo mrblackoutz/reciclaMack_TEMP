@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid2'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Tabs from '@mui/material/Tabs'
@@ -81,7 +81,12 @@ export default function Home() {
 			<AboutSection id='about'>
 				<Container>
 					<Grid container spacing={4} alignItems='center'>
-						<Grid item xs={12} md={6}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 6
+							}}
+						>
 							<Typography variant='h4' gutterBottom>
 								{messages.homePage.objetivos}
 							</Typography>
@@ -92,7 +97,12 @@ export default function Home() {
 								cooperativas e empresas parceiras.
 							</Typography>
 						</Grid>
-						<Grid item xs={12} md={6}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 6
+							}}
+						>
 							<Image
 								src='Ativos_Recicla_Mack/imagem-circuitos.png'
 								alt='Circuitos'
@@ -105,14 +115,24 @@ export default function Home() {
 			<WhyRecycleSection>
 				<Container>
 					<Grid container spacing={4} alignItems='center'>
-						<Grid item xs={12} md={6}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 6
+							}}
+						>
 							<Image
 								src='Ativos_Recicla_Mack/imagem-aparelhos-simbolo.png'
 								alt='Aparelhos eletrônicos'
 								sx={{ width: '100%', height: 'auto', borderRadius: 2 }}
 							/>
 						</Grid>
-						<Grid item xs={12} md={6}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 6
+							}}
+						>
 							<Typography variant='h4' gutterBottom>
 								{messages.homePage.porqueReciclar}
 							</Typography>
@@ -189,9 +209,18 @@ export default function Home() {
 					<Typography variant='h3' align='center' gutterBottom>
 						Nossos Parceiros
 					</Typography>
-					<Grid container spacing={4} justifyContent='center'>
+					<Grid container spacing={{ xs: 0, md: 4 }} justifyContent='center'>
 						{['mackenzie.svg', 'atletica.svg'].map((logo, index) => (
-							<Grid item xs={6} md={3} key={index}>
+							<Grid
+								key={index}
+								display={'flex'}
+								alignItems={'center'}
+								justifyContent={'center'}
+								size={{
+									xs: 6,
+									md: 3
+								}}
+							>
 								<Box
 									component='img'
 									src={logo}

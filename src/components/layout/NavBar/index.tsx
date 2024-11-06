@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid2'
 import CustomTypography from '@/components/CustomTypography'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -15,6 +15,7 @@ import useThemeContext from '@/hooks/useThemeContext'
 import Image from 'next/image'
 import TemporaryDrawer from './Drawer'
 import { pages } from '@/@core/routes'
+
 const StyledLink = ({
 	href,
 	children,
@@ -30,6 +31,7 @@ const StyledLink = ({
 		</Link>
 	)
 }
+
 const NavBar = () => {
 	const isMobile = useMediaQuery('(max-width:700px)')
 	const router = useRouter()
@@ -58,7 +60,7 @@ const NavBar = () => {
 				<Toolbar>
 					<Grid container alignItems='center' justifyContent='space-between'>
 						{/* Logo */}
-						<Grid item xs={4}>
+						<Grid size={4}>
 							<StyledLink href={'/'}>
 								<Box
 									sx={{
@@ -73,7 +75,7 @@ const NavBar = () => {
 							</StyledLink>
 						</Grid>
 						{/* Links */}
-						<Grid item xs={4} display='flex' justifyContent='center' alignItems='center'>
+						<Grid display='flex' justifyContent='center' alignItems='center' size={4}>
 							{isMobile ? (
 								<TemporaryDrawer links={pages} currentPath={currentPath} />
 							) : (
@@ -95,7 +97,7 @@ const NavBar = () => {
 							)}
 						</Grid>
 						{/* Botão de Acessibilidade */}
-						<Grid item xs={4} display='flex' justifyContent='center' alignItems='center'>
+						<Grid display='flex' justifyContent='center' alignItems='center' size={4}>
 							<IconButton aria-label='accessibility' onClick={handleClick}>
 								<AccessibilityNew sx={{ color: 'white' }} fontSize='large' />
 							</IconButton>

@@ -1,3 +1,4 @@
+// eslint.config.mjs
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import reactPlugin from 'eslint-plugin-react'
@@ -8,12 +9,9 @@ const commonRules = {
 	// Regras do TypeScript
 	...tsPlugin.configs.recommended.rules,
 	...tsPlugin.configs['recommended-requiring-type-checking'].rules,
-	// Regras do React
-	...reactPlugin.configs.recommended.rules,
 	// Outras regras personalizadas
 	'react/no-unescaped-entities': 'off',
 	'@next/next/no-page-custom-font': 'off',
-	'prettier/prettier': 'error',
 	'@typescript-eslint/no-unused-vars': 'error',
 	'@typescript-eslint/no-unused-expressions': 'error',
 	'react/prop-types': 'warn',
@@ -33,8 +31,7 @@ const commonRules = {
 			paths: [
 				{
 					name: '@mui/material',
-					message:
-						'Importação direta de @mui/material não é recomendada. Utilize importações individuais dos submódulos.'
+					message: 'Importação direta de @mui/material não é recomendada. Utilize importações individuais dos submódulos.'
 				}
 			]
 		}
@@ -56,10 +53,11 @@ export default [
 	{
 		...nextPluginWithoutExtends,
 		...prettierPluginRecommended,
+		...reactPlugin.configs.flat.recommended,
+		...reactPlugin.configs.flat['jsx-runtime'],
 		files: ['**/*.ts', '**/*.tsx'],
 		plugins: {
-			'@typescript-eslint': tsPlugin,
-			react: reactPlugin
+			'@typescript-eslint': tsPlugin
 		},
 		languageOptions: {
 			parser: tsParser,
@@ -97,3 +95,4 @@ export default [
 		}
 	}
 ]
+

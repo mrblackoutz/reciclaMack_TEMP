@@ -1,7 +1,7 @@
 'use client'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid2'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import Image from '../../components/Image'
 import CustomTypography from '../../components/CustomTypography'
@@ -10,7 +10,7 @@ const PontosDeColeta = ({ setpontoColetaAtual }: { setpontoColetaAtual: (url: st
 	return (
 		<Grid container spacing={2} justifyContent='center'>
 			{['PDC-1', 'PDC-2', 'PDC-3', 'PDC-4'].map(pdc => (
-				<Grid item key={pdc}>
+				<Grid key={pdc}>
 					<Button
 						sx={{
 							backgroundColor: '#00844D',
@@ -40,7 +40,7 @@ const CollectionPoints = () => {
 	)
 	return (
 		<Grid container direction='column'>
-			<Grid item>
+			<Grid>
 				<Box
 					color={'#FFF'}
 					bgcolor={'#00844D'}
@@ -49,11 +49,16 @@ const CollectionPoints = () => {
 					paddingX={{ xs: '1rem', md: '2rem' }}
 				>
 					<Grid container direction='column'>
-						<Grid item>
+						<Grid>
 							<h1>Como separar os materiais de coleta?</h1>
 						</Grid>
-						<Grid item container justifyContent='space-evenly' alignItems='center' spacing={4}>
-							<Grid item xs={12} md={4}>
+						<Grid container justifyContent='space-evenly' alignItems='center' spacing={4}>
+							<Grid
+								size={{
+									xs: 12,
+									md: 4
+								}}
+							>
 								<Grid
 									container
 									direction={{ xs: 'row', md: 'column' }}
@@ -62,14 +67,14 @@ const CollectionPoints = () => {
 									justifyContent='center'
 									alignItems='center'
 								>
-									<Grid item>
+									<Grid>
 										<h2>1° Etapa</h2>
 										<CustomTypography fontSize={'.8rem'} style={{ width: '25vw' }}>
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus
 											error sit voluptatem accusantium doloremque laudantium.
 										</CustomTypography>
 									</Grid>
-									<Grid item>
+									<Grid>
 										<h2>2° Etapa</h2>
 										<CustomTypography fontSize={'.8rem'} style={{ width: '25vw' }}>
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus
@@ -78,14 +83,27 @@ const CollectionPoints = () => {
 									</Grid>
 								</Grid>
 							</Grid>
-							<Grid item xs={12} md={4} display='flex' justifyContent='center' alignItems='center'>
+							<Grid
+								display='flex'
+								justifyContent='center'
+								alignItems='center'
+								size={{
+									xs: 12,
+									md: 4
+								}}
+							>
 								<Image
 									src='Ativos_Recicla_Mack/imagem-aparelhos-impilhados.png'
 									alt='Aparelhos empilhados'
 									style={{ objectFit: 'cover' }}
 								/>
 							</Grid>
-							<Grid item xs={12} md={4}>
+							<Grid
+								size={{
+									xs: 12,
+									md: 4
+								}}
+							>
 								<Grid
 									container
 									direction={{ xs: 'row', md: 'column' }}
@@ -94,14 +112,14 @@ const CollectionPoints = () => {
 									justifyContent='center'
 									alignItems='center'
 								>
-									<Grid item>
+									<Grid>
 										<h2>3° Etapa</h2>
 										<CustomTypography fontSize={'.8rem'} style={{ width: '25vw' }}>
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus
 											error sit voluptatem accusantium doloremque laudantium.
 										</CustomTypography>
 									</Grid>
-									<Grid item>
+									<Grid>
 										<h2>4° Etapa</h2>
 										<CustomTypography fontSize={'.8rem'} style={{ width: '25vw' }}>
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus
@@ -114,19 +132,24 @@ const CollectionPoints = () => {
 					</Grid>
 				</Box>
 			</Grid>
-			<Grid item>
+			<Grid>
 				<Box color={'#FFF'} bgcolor={'#10B14A'} height={{ md: '90vh', xs: '100%' }} width={'100%'} padding={'2rem'}>
 					<Grid container spacing={4} alignItems='center'>
-						<Grid item xs={12} md={6}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 6
+							}}
+						>
 							<Grid container direction='column' spacing={2}>
-								<Grid item>
+								<Grid>
 									<h1>Onde posso realizar o descarte?</h1>
 								</Grid>
-								<Grid item>
+								<Grid>
 									<h2>Pontos de coleta</h2>
 								</Grid>
 								{isMobile && (
-									<Grid item>
+									<Grid>
 										<Box display='flex' justifyContent='center'>
 											<iframe
 												src={pontoColetaAtual}
@@ -138,7 +161,7 @@ const CollectionPoints = () => {
 									</Grid>
 								)}
 								{!isMobile && <PontosDeColeta setpontoColetaAtual={setpontoColetaAtual} />}
-								<Grid item>
+								<Grid>
 									<h3>Locais - ponto de coleta n° 439</h3>
 									<p>
 										Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem
@@ -151,7 +174,12 @@ const CollectionPoints = () => {
 							</Grid>
 						</Grid>
 						{!isMobile && (
-							<Grid item xs={12} md={6}>
+							<Grid
+								size={{
+									xs: 12,
+									md: 6
+								}}
+							>
 								<Box display='flex' justifyContent='center'>
 									<iframe
 										src={pontoColetaAtual}

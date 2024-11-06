@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid2'
 import CustomTypography from '../../components/CustomTypography'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -41,7 +41,12 @@ export default function Home() {
 			<Container maxWidth='lg'>
 				<Box py={8} my={4}>
 					<Grid container spacing={6} justifyContent='center'>
-						<Grid item xs={12} md={5}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 5
+							}}
+						>
 							<Card elevation={3}>
 								<CardMedia
 									component='img'
@@ -76,7 +81,12 @@ export default function Home() {
 								</Collapse>
 							</Card>
 						</Grid>
-						<Grid item xs={12} md={5}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 5
+							}}
+						>
 							<Card elevation={3}>
 								<CardMedia
 									component='img'
@@ -106,7 +116,12 @@ export default function Home() {
 						Entenda os benefícios da reciclagem de lixo eletrônico.
 					</CustomTypography>
 					<Grid container spacing={6} justifyContent='center'>
-						<Grid item xs={12} md={3}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 3
+							}}
+						>
 							<Card style={{ backgroundColor: 'secondary.main' }}>
 								<CardContent>
 									<RecyclingIcon fontSize='large' color='primary' />
@@ -120,7 +135,12 @@ export default function Home() {
 								</CardContent>
 							</Card>
 						</Grid>
-						<Grid item xs={12} md={3}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 3
+							}}
+						>
 							<Card style={{ backgroundColor: 'secondary.main' }}>
 								<CardContent>
 									<RecyclingIcon fontSize='large' color='primary' />
@@ -134,7 +154,12 @@ export default function Home() {
 								</CardContent>
 							</Card>
 						</Grid>
-						<Grid item xs={12} md={3}>
+						<Grid
+							size={{
+								xs: 12,
+								md: 3
+							}}
+						>
 							<Card style={{ backgroundColor: 'secondary.main' }}>
 								<CardContent>
 									<RecyclingIcon fontSize='large' color='primary' />

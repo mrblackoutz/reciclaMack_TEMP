@@ -1,6 +1,6 @@
 'use client'
 import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid2'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import CustomizedButtons from './customButton'
 import CustomTypography from '../../components/CustomTypography'
@@ -23,7 +23,15 @@ const Card = ({ title, description, textButton }: CardProps) => {
 			}}
 		>
 			<Grid container spacing={3}>
-				<Grid item xs={12} md={8} display='flex' flexDirection='column' justifyContent='space-between'>
+				<Grid
+					display='flex'
+					flexDirection='column'
+					justifyContent='space-between'
+					size={{
+						xs: 12,
+						md: 8
+					}}
+				>
 					<CustomTypography variant='h4' color='#FFF' mb={3}>
 						{title}
 					</CustomTypography>
@@ -39,7 +47,14 @@ const Card = ({ title, description, textButton }: CardProps) => {
 						{textButton}
 					</CustomizedButtons>
 				</Grid>
-				<Grid item xs={12} md={4} display='flex' justifyContent='center'>
+				<Grid
+					display='flex'
+					justifyContent='center'
+					size={{
+						xs: 12,
+						md: 4
+					}}
+				>
 					<Box
 						component='img'
 						src='Ativos_Recicla_Mack/icone-imagem-aleatoria.png'
@@ -71,20 +86,21 @@ const Contact = () => {
 				height={{ md: '90vh', sm: '155vh' }}
 				justifyContent={'space-between'}
 			>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<h1>Sugestões / Perguntas</h1>
 				</Grid>
-				<Grid item xs={12} container spacing={5}>
+				<Grid container spacing={5} size={12}>
 					<Grid
-						item
-						xs={12}
-						sm={12}
-						md={6}
 						display={'flex'}
 						flexDirection={'row'}
 						justifyContent={'space-evenly'}
 						alignItems={'center'}
 						paddingBottom={'7rem'}
+						size={{
+							xs: 12,
+							sm: 12,
+							md: 6
+						}}
 					>
 						<Card
 							title={'Alguma pergunta?'}
@@ -95,15 +111,16 @@ const Contact = () => {
 						/>
 					</Grid>
 					<Grid
-						item
-						xs={12}
-						sm={12}
-						md={6}
 						display={'flex'}
 						flexDirection={'row'}
 						justifyContent={'space-evenly'}
 						alignItems={'center'}
 						paddingBottom={'7rem'}
+						size={{
+							xs: 12,
+							sm: 12,
+							md: 6
+						}}
 					>
 						<Card
 							title={'Alguma sugestão?'}
