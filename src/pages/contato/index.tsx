@@ -4,12 +4,6 @@ import Grid from '@mui/material/Grid';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CustomizedButtons from './customButton';
 import CustomTypography from '../../components/CustomTypography';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import RoomIcon from '@mui/icons-material/Room';
-import EmailIcon from '@mui/icons-material/Email';
 import FAQ from './faq';
 
 interface CardProps {
@@ -134,83 +128,6 @@ const Contact = () => {
         </Grid>
       </Grid>
 
-      <Grid
-        container
-        sx={{
-          color: 'white',
-          bgcolor: '#10B14A',
-          px: { xs: 2, sm: 4, md: 6 },
-          py: { xs: 6, md: 3 },
-          height: { xs: 'auto', md: '80vh' },
-          width: '100%',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Grid
-          item
-          xs={12}
-          sx={{
-            textAlign: { xs: 'center', sm: 'left' },
-            mb: { sm: 6, xs: 6, md: 2 },
-            ml: 2,
-          }}
-        >
-          <CustomTypography variant="h4" fontWeight="bold">
-            Divulgação de Redes Sociais
-          </CustomTypography>
-        </Grid>
-
-        <Grid
-          item
-          container
-          spacing={{ md: 20, sm: 10, xs: 5 }}
-          justifyContent="center"
-        >
-          {[
-            { IconComponent: EmailIcon, text: 'contato@email.com.br' },
-            { IconComponent: YouTubeIcon, text: 'ReciclaMackFCI' },
-            { IconComponent: InstagramIcon, text: '@ReciclaMack_FCI' },
-            { IconComponent: RoomIcon, text: 'Rua das Avenidas, nº 123' },
-            { IconComponent: LinkedInIcon, text: 'recicla_mack_FCI' },
-            { IconComponent: LocalPhoneIcon, text: '(XX) XXXXX-XXXX' },
-          ].map(({ IconComponent, text }, index) => (
-            <Grid
-              key={index}
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              sx={{ display: 'flex', justifyContent: 'center' }}
-            >
-              <Box
-                sx={{ display: 'flex', alignItems: 'center', minWidth: 250 }}
-              >
-                <IconComponent
-                  sx={{
-                    height: 45,
-                    width: 'auto',
-                    p: 0.7,
-                    borderRadius: 1.5,
-                    bgcolor: '#ffffff',
-                    color: '#00995C',
-                  }}
-                />
-                <CustomTypography
-                  variant="body2"
-                  sx={{
-                    ml: 1,
-                    textDecoration: 'underline',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  {text}
-                </CustomTypography>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Grid>
       <FAQ />
     </div>
   );

@@ -68,8 +68,8 @@ const NavBar = () => {
   };
 
   return (
-    <div style={{ height: 80, width: '100%' }}>
-      <AppBar position="fixed" sx={{ backgroundColor: '#202020', height: 80 }}>
+    <div style={{ height: 60, width: '100%' }}>
+      <AppBar component="nav" sx={{ backgroundColor: '#202020', height: 60 }}>
         <Toolbar>
           <Grid container alignItems="center" justifyContent="space-between">
             {/* Logo */}

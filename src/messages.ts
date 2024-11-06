@@ -3,9 +3,9 @@ export const messages = {
   footer: {
     recicla: 'Recicla',
     mack: 'Mack',
-    telefoneMackenzie: '(XX) XXXXX-XXXX',
-    emailMackenzie: 'contato@email.com.br',
-    localMackenzie: 'Rua endereço do local, nº 439',
+    telefoneMackenzie: '(11) 2766-7764',
+    emailMackenzie: 'fci@mackenzie.br',
+    localMackenzie: 'Rua da Consolação, 930',
 
     mackenzieLogoAlt: 'Mackenzie Logo',
     atleticaLogoAlt: 'Atletica Logo',

@@ -16,9 +16,8 @@ const faqs = [
   {
     question: 'Onde estão localizados os pontos de coleta?',
     answer:
-      'Os pontos de coleta estão espalhados por toda a cidade. Visite nosso site para encontrar o ponto mais próximo de você.',
+      'Os pontos de coleta estão espalhados por todo o Campus. Busque no nosso site para encontrar o ponto mais próximo de você.',
   },
-  // Outras perguntas e respostas...
 ];
 
 const FAQ = () => {

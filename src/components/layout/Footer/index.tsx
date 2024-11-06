@@ -1,235 +1,258 @@
 import React from 'react';
 import Link from 'next/link';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import Image from 'next/image';
+import { styled } from '@mui/material/styles';
+import Grid from '@mui/material/Grid2';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
 import CustomTypography from '@/components/CustomTypography';
-import Image from '@/components/Image';
-import StyledLink from '@/components/StyledLink';
 import { messages } from '@/messages';
+import { YouTube } from '@mui/icons-material';
 
-const ReciclaMackLabel = ({ fontSize }: { fontSize: string }) => {
-  return (
+const iconSize = 32;
+
+const StyledFooter = styled('footer')(({ theme }) => ({
+  backgroundColor: '#202020',
+  color: '#f7f7f7',
+  width: '100%',
+  padding: theme.spacing(2, 0),
+}));
+
+const FooterLink = styled(Link)(() => ({
+  color: '#f7f7f7',
+  fontSize: '16px',
+  textDecoration: 'none',
+  '&:hover': {
+    textDecoration: 'underline',
+  },
+}));
+
+const ReciclaMackLabel = () => (
+  <CustomTypography
+    color="#10B14A"
+    sx={{
+      fontWeight: 'bold',
+      fontSize: { xs: '18px', md: '22px' },
+      textAlign: 'center',
+    }}
+  >
+    {messages.footer.recicla}
     <CustomTypography
-      color={'#10B14A'}
-      sx={{ fontWeight: 'bold', fontSize: fontSize }}
+      component="span"
+      sx={{
+        color: 'red',
+        fontWeight: 'bold',
+        fontSize: { xs: '18px', md: '22px' },
+      }}
     >
-      {messages.footer.recicla}
-      <CustomTypography
-        component="span"
-        sx={{ color: 'red', fontWeight: 'bold', fontSize: fontSize }}
-      >
-        {messages.footer.mack}
-      </CustomTypography>
+      {messages.footer.mack}
     </CustomTypography>
-  );
-};
+  </CustomTypography>
+);
 
-const WebsiteFooter = () => {
-  const isMobile = useMediaQuery('(max-width:600px)');
-
-  const iconSize = isMobile ? 30 : 45;
-
-  return (
-    <footer style={{ height: '100%', width: '100%' }}>
-      <Box bgcolor={'#202020'} width={'100%'} height={'100%'}>
-        <Grid container height={'100%'} width={'100%'}>
-          <Grid item xs={6} md={3}>
-            <Box
-              display={'flex'}
-              flexDirection={'column'}
-              alignItems={'center'}
-              justifyContent={'center'}
-              width={'100%'}
-              height={'100%'}
-            >
-              <StyledLink href={'/'}>
-                <Image
-                  src="mackenzie.svg"
-                  style={{ height: isMobile ? 45 : 80, margin: 10 }}
-                  alt={messages.footer.mackenzieLogoAlt}
-                />
-              </StyledLink>
-              <ReciclaMackLabel fontSize={isMobile ? '18px' : '22px'} />
-              <StyledLink href={'/'}>
-                <Image
-                  src="atletica.svg"
-                  style={{ height: isMobile ? 45 : 80, margin: 10 }}
-                  alt={messages.footer.atleticaLogoAlt}
-                />
-              </StyledLink>
-            </Box>
+const ContactInfo = () => (
+  <>
+    <Typography variant="h5" gutterBottom>
+      Contato
+    </Typography>
+    <Grid container direction="column" spacing={2}>
+      {[
+        {
+          icon: 'icone-telefone.png',
+          alt: messages.footer.telefoneIconAlt,
+          text: messages.footer.telefoneMackenzie,
+        },
+        {
+          icon: 'icone-email.png',
+          alt: messages.footer.emailIconAlt,
+          text: messages.footer.emailMackenzie,
+        },
+        {
+          icon: 'icone-local.png',
+          alt: messages.footer.localIconAlt,
+          text: messages.footer.localMackenzie,
+          href: 'https://maps.app.goo.gl/pbfQXPMZMtVQmHzNA',
+        },
+      ].map((item, index) => (
+        <Grid
+          key={index}
+          container
+          alignItems="center"
+          spacing={2}
+          flexWrap={'nowrap'}
+        >
+          <Grid>
+            <Image
+              width={iconSize}
+              height={iconSize}
+              style={{ maxWidth: '100%', height: 'auto' }}
+              src={`/Ativos_Recicla_Mack/${item.icon}`}
+              alt={item.alt}
+            />
           </Grid>
-          <Grid item xs={6} md={3}>
-            <Box
-              display={'flex'}
-              width={'100%'}
-              height={'100%'}
-              flexDirection={'column'}
-              justifyContent={'space-evenly'}
-              alignItems={'center'}
-              fontSize={{ md: '16px', xs: '14px' }}
-            >
-              <Link
-                href="/quem-somos"
-                style={{ color: '#f7f7f7', fontSize: '16px' }}
-              >
-                {messages.aboutUs}
-              </Link>
-              <Link
-                href="/lixo-eletronico"
-                style={{ color: '#f7f7f7', fontSize: '16px' }}
-              >
-                {messages.whatToRecycle}
-              </Link>
-              <Link
-                href="/lixo-eletronico"
-                style={{ color: '#f7f7f7', fontSize: '16px' }}
-              >
-                {messages.howToRecycle}
-              </Link>
-              <Link
-                href="/contato"
-                style={{ color: '#f7f7f7', fontSize: '16px' }}
-              >
-                {messages.faqComponent.faq}
-              </Link>
-              <Link
-                href="/contato"
-                style={{ color: '#f7f7f7', fontSize: '16px' }}
-              >
-                {messages.contatoPage.contato}
-              </Link>
-            </Box>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Box
-              width={'100%'}
-              height={'100%'}
-              display={'flex'}
-              flexDirection={'column'}
-              justifyContent={'space-evenly'}
-              alignItems={'center'}
-            >
-              <Link
-                href="/quem-somos"
-                style={{ color: '#f7f7f7', fontSize: '16px' }}
-              >
-                Direitos Autorais
-              </Link>
-              <Link
-                href="/quem-somos"
-                style={{ color: '#f7f7f7', fontSize: '16px' }}
-              >
-                Políticas de Privacidade
-              </Link>
-              <Link
-                href="/quem-somos"
-                style={{ color: '#f7f7f7', fontSize: '16px' }}
-              >
-                Cookies
-              </Link>
-              <Link
-                href="/quem-somos"
-                style={{ color: '#f7f7f7', fontSize: '16px' }}
-              >
-                Termos de Uso
-              </Link>
-            </Box>
-          </Grid>
-          <Grid item xs={6} md={3} display={'flex'} alignItems={'center'}>
-            <Box width={'100%'} m={1}>
-              <Box display={'flex'} alignItems={'center'} mt={1}>
-                <Image
-                  src="Ativos_Recicla_Mack/icone-telefone.png"
-                  style={{ height: iconSize }}
-                  alt={messages.footer.telefoneIconAlt}
-                />
+          <Grid>
+            {item.href ? (
+              <FooterLink href={item.href}>
                 <CustomTypography
-                  color={'#f7f7f7'}
                   variant="body2"
-                  sx={{ ml: 1, textDecoration: 'underline' }}
+                  sx={{ wordBreak: 'break-all' }}
                 >
-                  {messages.footer.telefoneMackenzie}
+                  {item.text}
                 </CustomTypography>
-              </Box>
-              <Box display={'flex'} alignItems={'center'} mt={1}>
-                <Image
-                  src="Ativos_Recicla_Mack/icone-email.png"
-                  style={{ height: iconSize }}
-                  alt={messages.footer.emailIconAlt}
-                />
-                <CustomTypography
-                  color={'#f7f7f7'}
-                  variant="body2"
-                  sx={{
-                    ml: 1,
-                    textDecoration: 'underline',
-                    wordBreak: 'break-all',
-                  }}
-                >
-                  {messages.footer.emailMackenzie}
-                </CustomTypography>
-              </Box>
-              <Box display={'flex'} alignItems={'center'} mt={1}>
-                <Image
-                  src="Ativos_Recicla_Mack/icone-local.png"
-                  style={{ height: iconSize }}
-                  alt={messages.footer.localIconAlt}
-                />
-                <CustomTypography
-                  color={'#f7f7f7'}
-                  variant="body2"
-                  sx={{ ml: 1, textDecoration: 'underline' }}
-                >
-                  {messages.footer.localMackenzie}
-                </CustomTypography>
-              </Box>
-              <Box marginTop={2}>
-                <Image
-                  src="Ativos_Recicla_Mack/icone-logo-whatsapp.png"
-                  alt={messages.footer.whatsappIconAlt}
-                  style={{ height: iconSize, marginRight: 12 }}
-                />
-                <Image
-                  src="Ativos_Recicla_Mack/icone-logo-youtube.png"
-                  alt={messages.footer.youtubeIconAlt}
-                  style={{ height: iconSize, marginRight: 12 }}
-                />
-                <Image
-                  src="Ativos_Recicla_Mack/icone-logo-facebook.png"
-                  alt={messages.footer.facebookIconAlt}
-                  style={{ height: iconSize, marginRight: 12 }}
-                />
-                <Image
-                  src="Ativos_Recicla_Mack/icone-logo-instagram.png"
-                  alt={messages.footer.instagramIconAlt}
-                  style={{ height: iconSize, marginRight: 12 }}
-                />
-                <Image
-                  src="Ativos_Recicla_Mack/icone-logo-linkedin.png"
-                  alt={messages.footer.linkedinIconAlt}
-                  style={{ height: iconSize, marginRight: 12 }}
-                />
-              </Box>
-            </Box>
+              </FooterLink>
+            ) : (
+              <CustomTypography variant="body2" sx={{ wordBreak: 'break-all' }}>
+                {item.text}
+              </CustomTypography>
+            )}
           </Grid>
         </Grid>
-      </Box>
-      <Box
-        display={'flex'}
-        color={'ffffff'}
-        bgcolor={'#000000'}
-        width={'100%'}
-        py={3}
-        justifyContent={'center'}
-        alignItems="center"
+      ))}
+    </Grid>
+  </>
+);
+
+const SocialMedia = () => (
+  <>
+    <Typography variant="h5" gutterBottom>
+      Redes Sociais
+    </Typography>
+    <Grid container spacing={2}>
+      <Grid>
+        <IconButton
+          aria-label="YouTube"
+          color={'primary'}
+          href="https://www.youtube.com/channel/UCMAJAKaW_MAxEANo-lTplgg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <YouTube fontSize="large" />
+        </IconButton>
+      </Grid>
+    </Grid>
+  </>
+);
+
+const WebsiteFooter = () => {
+  return (
+    <StyledFooter>
+      <Container maxWidth="lg">
+        <Grid container spacing={2}>
+          <Grid
+            container
+            size={{ xs: 12, md: 3 }}
+            direction={{ xs: 'row', md: 'column' }}
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Grid size={'grow'}>
+              <Link href="/" passHref>
+                <Image
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                  src="mackenzie.svg"
+                  alt={messages.footer.mackenzieLogoAlt}
+                />
+              </Link>
+            </Grid>
+            <Grid size={'grow'}>
+              <ReciclaMackLabel />
+            </Grid>
+            <Grid size={'grow'}>
+              <Link href="/" passHref>
+                <Image
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                  src="atletica.svg"
+                  alt={messages.footer.atleticaLogoAlt}
+                />
+              </Link>
+            </Grid>
+          </Grid>
+
+          <Grid container size={{ xs: 6, md: 3 }} direction="column">
+            <Grid size="auto">
+              <Typography variant="h5" gutterBottom>
+                Links Rápidos
+              </Typography>
+            </Grid>
+            <Grid
+              container
+              direction="column"
+              justifyContent={'space-around'}
+              size="grow"
+              sx={{ borderLeft: '2px solid rgba(255, 255, 255, 0.1)', pl: 2 }}
+            >
+              {[
+                messages.aboutUs,
+                messages.whatToRecycle,
+                messages.faqComponent.faq,
+                messages.contatoPage.contato,
+              ].map((text) => (
+                <Grid key={text}>
+                  <FooterLink href="/quem-somos">{text}</FooterLink>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+
+          <Grid container size={{ xs: 6, md: 3 }} direction="column">
+            <Grid size="auto">
+              <Typography variant="h5" gutterBottom>
+                Informações Legais
+              </Typography>
+            </Grid>
+            <Grid
+              container
+              direction="column"
+              justifyContent={'space-around'}
+              size="grow"
+              sx={{ borderLeft: '2px solid rgba(255, 255, 255, 0.1)', pl: 2 }}
+            >
+              {[
+                'Direitos Autorais',
+                'Políticas de Privacidade',
+                'Cookies',
+                'Termos de Uso',
+              ].map((text) => (
+                <Grid key={text}>
+                  <FooterLink href="/quem-somos">{text}</FooterLink>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+
+          {/* Contato e Redes Sociais */}
+          <Grid
+            size={{ xs: 12, md: 3 }}
+            container
+            direction={{
+              xs: 'row',
+              md: 'column',
+            }}
+            spacing={1}
+          >
+            <Grid size={{ xs: 8, md: 12 }}>
+              <ContactInfo />
+            </Grid>
+            <Grid size={{ xs: 4, md: 12 }}>
+              <SocialMedia />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Container>
+      <Container
+        maxWidth="lg"
+        sx={{ mt: 4, pt: 2, borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}
       >
-        <CustomTypography variant="body1" color={'white'} ml={2} mr={2}>
+        <Typography variant="body2" color="white" align="center">
           {messages.footer.copyRight}
-        </CustomTypography>
-      </Box>
-    </footer>
+        </Typography>
+      </Container>
+    </StyledFooter>
   );
 };
 
