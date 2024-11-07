@@ -8,7 +8,11 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
 	return (
 		<>
-			<Navbar /> <Box component='main'>{children}</Box> <Footer />
+			<Navbar />
+			<Box component='main' marginTop={'64px'}>
+				{children}
+			</Box>
+			<Footer />
 		</>
 	)
 }

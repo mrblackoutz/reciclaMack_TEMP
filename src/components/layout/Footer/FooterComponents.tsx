@@ -143,6 +143,7 @@ export const FooterLinkSection = ({ title, links }: FooterLinkSectionProps) => (
 			justifyContent='space-around'
 			size='grow'
 			sx={{ borderLeft: '2px solid rgba(255, 255, 255, 0.1)', pl: 2 }}
+			spacing={1}
 		>
 			{links.map(link => (
 				<FooterLinkItem key={link.text} href={link.href}>

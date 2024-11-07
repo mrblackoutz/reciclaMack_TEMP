@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
@@ -17,13 +17,32 @@ const HeroSection = styled(Box)(({ theme }) => ({
 	backgroundColor: 'black',
 	color: 'white',
 	position: 'relative',
-	height: '40vh',
-	[theme.breakpoints.up('lg')]: { height: '400px' },
-	[theme.breakpoints.down('sm')]: { height: '60vh' },
+	height: '60vh',
+	[theme.breakpoints.up('md')]: { height: '70vh' },
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'center',
-	overflow: 'hidden'
+	overflow: 'hidden',
+	'&::after': {
+		content: '""',
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 0,
+		background: 'linear-gradient(45deg, rgba(0,181,159,0.7) 0%, rgba(16,177,74,0.7) 100%)',
+		zIndex: 1
+	}
+}))
+
+const AnimatedTypography = styled(CustomTypography)(({ theme }) => ({
+	opacity: 0,
+	transform: 'translateY(20px)',
+	transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+	'&.visible': {
+		opacity: 1,
+		transform: 'translateY(0)'
+	}
 }))
 const AboutSection = styled(Box)(({ theme }) => ({
 	backgroundColor: theme.palette.background.paper,
@@ -50,9 +69,16 @@ const ContactSection = styled(Box)(({ theme }) => ({
 }))
 export default function Home() {
 	const [activeTab, setActiveTab] = useState(0)
+	const [isVisible, setIsVisible] = useState(false)
+
+	useEffect(() => {
+		setIsVisible(true)
+	}, [])
+
 	const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
 		setActiveTab(newValue)
 	}
+
 	return (
 		<Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
 			<HeroSection>
@@ -66,14 +92,27 @@ export default function Home() {
 						opacity: 0.6
 					}}
 				/>
-				<Box sx={{ position: 'absolute', textAlign: 'center', zIndex: 1 }}>
-					<CustomTypography variant='h2' sx={{ color: '#fff', fontSize: { xs: 25, md: 40 }, mb: 2 }}>
+				<Box sx={{ position: 'absolute', textAlign: 'center', zIndex: 2 }}>
+					<AnimatedTypography
+						variant='h2'
+						className={isVisible ? 'visible' : ''}
+						sx={{ color: '#fff', fontSize: { xs: 30, md: 48 }, mb: 2, fontWeight: 'bold' }}
+					>
 						{messages.homePage.revitalizando}
-					</CustomTypography>
-					<Typography variant='h5' sx={{ mb: 4 }}>
+					</AnimatedTypography>
+					<Typography variant='h5' sx={{ mb: 4, color: '#fff' }}>
 						Uma iniciativa da Universidade Presbiteriana Mackenzie para um futuro sustentável
 					</Typography>
-					<Button variant='contained' size='large'>
+					<Button
+						variant='contained'
+						size='large'
+						sx={{
+							backgroundColor: theme => theme.palette.secondary.main,
+							'&:hover': {
+								backgroundColor: theme => theme.palette.secondary.dark
+							}
+						}}
+					>
 						Descubra como participar
 					</Button>
 				</Box>
@@ -92,9 +131,8 @@ export default function Home() {
 							</Typography>
 							<Typography paragraph>{messages.homePage.objetivosTexto}</Typography>
 							<Typography>
-								O ReciclaMack é um projeto pioneiro de extensão universitária da Universidade Presbiteriana Mackenzie.
-								Nossa missão é promover a reciclagem responsável de eletrônicos, unindo esforços acadêmicos,
-								cooperativas e empresas parceiras.
+								O ReciclaMack é um projeto pioneiro de extensão universitária da Universidade Presbiteriana Mackenzie. Nossa missão é
+								promover a reciclagem responsável de eletrônicos, unindo esforços acadêmicos, cooperativas e empresas parceiras.
 							</Typography>
 						</Grid>
 						<Grid
@@ -158,17 +196,13 @@ export default function Home() {
 										<li>
 											<Box sx={{ display: 'flex', alignItems: 'center' }}>
 												<DeleteOutline />
-												<Typography sx={{ ml: 1 }}>
-													Estabelecer pontos de coleta de eletrônicos em todo o campus
-												</Typography>
+												<Typography sx={{ ml: 1 }}>Estabelecer pontos de coleta de eletrônicos em todo o campus</Typography>
 											</Box>
 										</li>
 										<li>
 											<Box sx={{ display: 'flex', alignItems: 'center' }}>
 												<Group />
-												<Typography sx={{ ml: 1 }}>
-													Educar estudantes e comunidade sobre reciclagem responsável
-												</Typography>
+												<Typography sx={{ ml: 1 }}>Educar estudantes e comunidade sobre reciclagem responsável</Typography>
 											</Box>
 										</li>
 										<li>
@@ -185,8 +219,8 @@ export default function Home() {
 							<Card>
 								<CardContent>
 									<Typography>
-										Desde o início do projeto, o ReciclaMack já coletou toneladas de lixo eletrônico e envolveu centenas
-										de estudantes em iniciativas de reciclagem.
+										Desde o início do projeto, o ReciclaMack já coletou toneladas de lixo eletrônico e envolveu centenas de estudantes
+										em iniciativas de reciclagem.
 									</Typography>
 								</CardContent>
 							</Card>
@@ -195,8 +229,8 @@ export default function Home() {
 							<Card>
 								<CardContent>
 									<Typography>
-										Planejamos expandir nosso projeto para outras universidades e comunidades, criando uma rede de
-										reciclagem de eletrônicos em todo o país.
+										Planejamos expandir nosso projeto para outras universidades e comunidades, criando uma rede de reciclagem de
+										eletrônicos em todo o país.
 									</Typography>
 								</CardContent>
 							</Card>
