@@ -109,7 +109,7 @@ export default function Home() {
 
 	return (
 		<Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-			<HeroSection sx={{ px: 4, position: 'relative' }}>
+			<HeroSection sx={{ position: 'relative' }}>
 				<Image
 					src='circuitoseletronicos.jpg'
 					alt={messages.homePage.bannerAlt}
