@@ -13,8 +13,8 @@ import Link from 'next/link'
 import StyledLink from '@/components/StyledLink'
 interface Link {
 	path: string
-	icone: React.ReactNode
 	texto: string
+	icone?: React.ReactNode
 }
 interface TemporaryDrawerProps {
 	links: Link[]
