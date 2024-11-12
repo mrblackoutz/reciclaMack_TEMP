@@ -162,7 +162,13 @@ export default function Home() {
 						Sobre o Projeto
 					</Typography>
 					<Grid container spacing={4}>
-						<Grid size={{ xs: 12, md: 6 }}>
+						<Grid
+							size={{ xs: 12, md: 6 }}
+							display={'flex'}
+							alignItems={'center'}
+							justifyContent={'center'}
+							flexDirection={'column'}
+						>
 							<Typography component={'p'}>
 								O ReciclaMack é um projeto de extensão universitária que visa promover a reciclagem responsável de
 								eletrônicos, unindo esforços acadêmicos, cooperativas e empresas para um futuro mais sustentável.
@@ -208,6 +214,10 @@ export default function Home() {
 									xs: 12,
 									md: 6
 								}}
+								display={'flex'}
+								alignItems={'center'}
+								justifyContent={'center'}
+								flexDirection={'column'}
 							>
 								<Typography variant='h4' gutterBottom>
 									{messages.homePage.objetivos}
