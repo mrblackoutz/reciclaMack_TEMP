@@ -9,12 +9,13 @@ import CardContent from '@mui/material/CardContent'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
-import { DeleteOutline, Group, LightbulbOutlined, ArrowForward, HandshakeOutlined } from '@mui/icons-material'
+import { DeleteOutline, Group, LightbulbOutlined, HandshakeOutlined, ExpandMore } from '@mui/icons-material'
 import Image from '@/components/Image'
 import CustomTypography from '@/components/CustomTypography'
 import { messages } from '@/messages'
-import { Divider } from '@mui/material'
+import { Alert, Collapse, Divider, TextField } from '@mui/material'
 import { useRouter } from 'next/router'
+import { useForm, Controller } from 'react-hook-form'
 
 const HeroSection = styled(Box)(({}) => ({
 	position: 'relative',
@@ -36,7 +37,7 @@ const HeroSection = styled(Box)(({}) => ({
 	}
 }))
 
-const AnimatedTypography = styled(CustomTypography)(({ theme }) => ({
+const AnimatedTypography = styled(CustomTypography)(({}) => ({
 	opacity: 0,
 	transform: 'translateY(20px)',
 	transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
@@ -59,12 +60,6 @@ const PartnersSection = styled(Box)(({ theme }) => ({
 	backgroundColor: theme.palette.background.default,
 	padding: theme.spacing(8, 0)
 }))
-const ContactSection = styled(Box)(({ theme }) => ({
-	backgroundColor: theme.palette.primary.main,
-	color: theme.palette.primary.contrastText,
-	padding: theme.spacing(8, 0),
-	textAlign: 'center'
-}))
 
 const SectionWrapper = styled(Box)(({ theme }) => ({
 	padding: theme.spacing(8, 2),
@@ -76,17 +71,85 @@ const SectionWrapper = styled(Box)(({ theme }) => ({
 	}
 }))
 
+const ContactSection = styled(Box)(({ theme }) => ({
+	backgroundColor: theme.palette.primary.main,
+	color: theme.palette.primary.contrastText,
+	padding: theme.spacing(8, 0),
+}))
+
 const ColorButton = styled(Button)(({ theme }) => ({
-	color: theme.palette.getContrastText('#00b59f'),
-	backgroundColor: '#00b59f',
+	backgroundColor: '#00AB55',
+	color: theme.palette.common.white,
 	'&:hover': {
-		backgroundColor: '#008f7a'
+		backgroundColor: 'rgba(0, 171, 85, 0.9)'
 	}
 }))
 
 export default function Home() {
 	const [activeTab, setActiveTab] = useState(0)
 	const [isVisible, setIsVisible] = useState(false)
+	const [isOpen, setIsOpen] = useState(false)
+	const [response, setResponse] = useState<{ type: 'success' | 'error' | 'info' | 'warning'; message: string }>({
+		type: 'success',
+		message: ''
+	})
+	const { control, handleSubmit, reset } = useForm({
+		defaultValues: {
+			name: '',
+			email: '',
+			message: '',
+			subject: 'ReciclaMack - Formulário de contato',
+			honeypot: '',
+			replyTo: '@',
+			accessKey: 'seu-access-key-aqui'
+		}
+	})
+
+	interface FormData {
+		name: string
+		email: string
+		message: string
+		subject: string
+		honeypot: string
+		replyTo: string
+		accessKey: string
+	}
+
+	interface ResponseData {
+		success: boolean
+		message: string
+	}
+
+	const onSubmit = async (data: FormData) => {
+		try {
+			const res = await fetch('https://api.staticforms.xyz/submit', {
+				method: 'POST',
+				body: JSON.stringify(data),
+				headers: { 'Content-Type': 'application/json' }
+			})
+
+			const json: ResponseData = await res.json()
+
+			if (json.success) {
+				setResponse({
+					type: 'success',
+					message: 'Obrigado por entrar em contato conosco.'
+				})
+				reset()
+			} else {
+				setResponse({
+					type: 'error',
+					message: json.message
+				})
+			}
+		} catch (e) {
+			console.log('Ocorreu um erro', e)
+			setResponse({
+				type: 'error',
+				message: 'Ocorreu um erro ao enviar o formulário'
+			})
+		}
+	}
 	const router = useRouter()
 
 	useEffect(() => {
@@ -405,17 +468,97 @@ export default function Home() {
 				</Container>
 			</PartnersSection>
 			<ContactSection id='contact'>
-				<Container>
-					<Typography variant='h3' gutterBottom>
-						Entre em Contato
-					</Typography>
-					<Typography variant='h6' paragraph>
-						Quer saber mais sobre o projeto ou se tornar um parceiro? Entre em contato conosco!
-					</Typography>
-
-					<ColorButton variant='contained' size='large' endIcon={<ArrowForward />}>
-						Fale Conosco
-					</ColorButton>
+				<Container maxWidth='sm'>
+					<Box display='flex' flexDirection='column' alignItems='center' textAlign='center'>
+						<Typography variant='h2' gutterBottom>
+							Entre em Contato
+						</Typography>
+						<Typography variant='body1' component={'p'}>
+							Quer saber mais sobre o projeto ou se tornar um parceiro? Entre em contato conosco!
+						</Typography>
+						<ColorButton
+							variant='contained'
+							onClick={() => setIsOpen(!isOpen)}
+							endIcon={<ExpandMore style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />}
+							sx={{ marginTop: 4 }}
+						>
+							FALE CONOSCO
+						</ColorButton>
+						<Collapse in={isOpen} style={{ width: '100%', marginTop: 16 }}>
+							<Card>
+								<CardContent>
+									{response.message && (
+										<Alert severity={response.type} style={{ marginBottom: 16 }}>
+											{response.message}
+										</Alert>
+									)}
+									<form onSubmit={handleSubmit(onSubmit)}>
+										<Controller
+											name='name'
+											control={control}
+											rules={{ required: 'Nome é obrigatório' }}
+											render={({ field, fieldState: { error } }) => (
+												<TextField
+													{...field}
+													fullWidth
+													label='Nome'
+													variant='outlined'
+													margin='normal'
+													error={!!error}
+													helperText={error?.message}
+												/>
+											)}
+										/>
+										<Controller
+											name='email'
+											control={control}
+											rules={{
+												required: 'Email é obrigatório',
+												pattern: {
+													value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+													message: 'Endereço de email inválido'
+												}
+											}}
+											render={({ field, fieldState: { error } }) => (
+												<TextField
+													{...field}
+													fullWidth
+													label='Email'
+													variant='outlined'
+													margin='normal'
+													type='email'
+													error={!!error}
+													helperText={error?.message}
+												/>
+											)}
+										/>
+										<Controller
+											name='message'
+											control={control}
+											rules={{ required: 'Mensagem é obrigatória' }}
+											render={({ field, fieldState: { error } }) => (
+												<TextField
+													{...field}
+													fullWidth
+													label='Mensagem'
+													variant='outlined'
+													margin='normal'
+													multiline
+													rows={4}
+													error={!!error}
+													helperText={error?.message}
+												/>
+											)}
+										/>
+										<input type='hidden' name='honeypot' style={{ display: 'none' }} />
+										<ColorButton fullWidth variant='contained' type='submit' style={{ marginTop: 16 }}>
+											Enviar
+										</ColorButton>
+									</form>
+								</CardContent>
+							</Card>
+						</Collapse>
+					</Box>
 				</Container>
 			</ContactSection>
 		</Box>
